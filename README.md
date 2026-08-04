@@ -44,66 +44,6 @@
 
 ---
 
-## On-Page SEO Checklist ✅
-
-| Element | Status |
-|---|---|
-| `<title>` tag with primary keyword | ✅ |
-| Meta description (under 160 chars) | ✅ |
-| Canonical URL | ✅ |
-| robots meta tag | ✅ |
-| Open Graph tags (og:title, og:description, og:image) | ✅ |
-| Twitter Card tags | ✅ |
-| Schema.org – WebApplication + SoftwareApplication | ✅ |
-| Schema.org – Organization | ✅ |
-| Schema.org – WebSite | ✅ |
-| Schema.org – FAQPage (6 questions) | ✅ |
-| Schema.org – BreadcrumbList | ✅ |
-| H1 on every page | ✅ |
-| H2/H3 structure in sections | ✅ |
-| Privacy Policy page | ✅ |
-| robots.txt with sitemap reference | ✅ |
-| sitemap.xml | ✅ |
-| script.js loaded with `defer` | ✅ |
-| Semantic footer with nav columns | ✅ |
-
----
-
-## Off-Page SEO Action Plan 🚀
-
-### 1. Submit to Search Engines (Free, Do First)
-
-- **Google Search Console** → https://search.google.com/search-console
-  - Add property: `https://typeracer-pro-web.vercel.app/`
-  - Submit sitemap: `https://typeracer-pro-web.vercel.app/sitemap.xml`
-
-- **Bing Webmaster Tools** → https://www.bing.com/webmasters
-
-### 2. Directory & Tool Listings
-
-| Directory | URL |
-|---|---|
-| Product Hunt | https://www.producthunt.com/posts/new |
-| AlternativeTo | https://alternativeto.net/software/add/ |
-| G2 | https://www.g2.com/products/new |
-| Futurepedia | https://www.futurepedia.io/submit-tool |
-| Fazier | https://fazier.com/submit |
-
-### 3. Reddit Communities
-
-- r/learnprogramming
-- r/webdev
-- r/learntyping
-- r/InternetIsBeautiful
-- r/SideProject
-
-### 4. Dev Community Posts (Dofollow Backlinks)
-
-- **Dev.to** → https://dev.to/new
-- **Hashnode** → https://hashnode.com
-- **IndieHackers** → https://www.indiehackers.com
-
----
 
 ## Project Structure
 
@@ -121,18 +61,6 @@ typeracer-pro/
 
 ---
 
-## Local Development
-
-Just open `index.html` in a browser — no build step, no dependencies, no install needed.
-
----
-
-## Deploy to Vercel
-
-1. Push to GitHub
-2. Go to [vercel.com](https://vercel.com) → New Project → Import repo → Deploy
-
----
 
 ## Tech Stack
 
