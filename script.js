@@ -380,39 +380,47 @@ function updateLiveStats() {
 }
 
 // ── Input Handler
-// Use keydown for Space to avoid the double-input-event bug
-// (setting $input.value = '' fires another 'input' event on some browsers)
+// Mobile virtual keyboards don't reliably fire keydown for Space.
+// So Space is detected in the 'input' event (works on all devices).
+// keydown is only used for Tab (restart) and to block Backspace on empty input.
+
 let _processingSpace = false;
 
 $input.addEventListener('keydown', (e) => {
   if (e.key === 'Backspace' && $input.value === '') { e.preventDefault(); return; }
-  if (e.key === 'Tab')   { e.preventDefault(); resetTest(); return; }
+  if (e.key === 'Tab') { e.preventDefault(); resetTest(); return; }
+});
 
-  // Handle Space here to avoid double-fire
-  if (e.key === ' ') {
-    e.preventDefault();                    // stop space from reaching the input
-    if (state.isFinished) return;
+$input.addEventListener('input', () => {
+  if (_processingSpace || state.isFinished) return;
 
-    const typed   = $input.value.trim();
-    const current = state.words[state.currentWordIndex];
+  const typed = $input.value;
 
-    // Don't submit empty (user pressed space before typing)
-    if (typed.length === 0) return;
+  // ── Space detected → submit current word
+  if (typed.endsWith(' ') || typed.includes(' ')) {
+    const word = typed.trim();
 
-    // Start timer on very first keypress if not yet running
+    // Don't submit if nothing typed yet
+    if (word.length === 0) {
+      _processingSpace = true;
+      $input.value = '';
+      _processingSpace = false;
+      return;
+    }
+
+    // Start timer on first submission if not yet running
     if (!state.isRunning) startTimer();
 
-    if (typed === current) {
+    const current = state.words[state.currentWordIndex];
+
+    if (word === current) {
       state.correctWords++;
       state.streak++;
-      // Count correct keystrokes for the whole word + space
-      // (already tracked letter-by-letter in input event, so only add the space)
-      state.correctKeystrokes += 1; // +1 for the space itself
       markWordCorrect(state.currentWordIndex);
     } else {
       state.incorrectWords++;
       state.streak = 0;
-      markWordIncorrect(state.currentWordIndex, typed);
+      markWordIncorrect(state.currentWordIndex, word);
       shakeInput();
     }
 
@@ -421,6 +429,7 @@ $input.addEventListener('keydown', (e) => {
 
     state.currentWordIndex++;
     state.currentLetterIndex = 0;
+
     _processingSpace = true;
     $input.value = '';
     _processingSpace = false;
@@ -429,28 +438,19 @@ $input.addEventListener('keydown', (e) => {
     $progressBar.style.width   = progress + '%';
     $progressLabel.textContent = progress + '%';
 
+    updateLiveStats();
+
     if (state.currentWordIndex >= state.words.length) { endTest(); return; }
     updateCursor();
+    return;
   }
-});
 
-$input.addEventListener('input', () => {
-  if (_processingSpace || state.isFinished) return;
-
-  const typed   = $input.value;
-  const current = state.words[state.currentWordIndex];
-
+  // ── Normal typing → highlight letters live
   // Start timer on first keystroke
   if (!state.isRunning && typed.length > 0) startTimer();
-  state.totalKeystrokes++;
 
-  // Live letter highlighting
+  const current = state.words[state.currentWordIndex];
   highlightLetters(state.currentWordIndex, typed);
-
-  // Track correct keystrokes letter by letter
-  if (typed.length > 0 && current[typed.length - 1] === typed[typed.length - 1]) {
-    state.correctKeystrokes++;
-  }
 
   state.currentLetterIndex = typed.length;
   updateCursor();
