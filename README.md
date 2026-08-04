@@ -8,22 +8,23 @@
 
 ## 📸 Screenshots
 
-### 🏠 Home Page (Light Mode)
-![Home Page Light](https://typeracer-pro-web.vercel.app/og-image.png)
+### 🏠 Home Page
+![Home Page](https://raw.githubusercontent.com/Mumtazsanjar/typeracer-pro/main/screenshots/home-page.png)
 
-> Full page previews below:
+### 🌙 Dark Theme
+![Dark Theme](https://raw.githubusercontent.com/Mumtazsanjar/typeracer-pro/main/screenshots/home-darktheme.png)
 
-| Home — Light | Home — Dark |
-|---|---|
-| ![Home Light](https://raw.githubusercontent.com/Mumtazsanjar/typeracer-pro/main/screenshots/home-light.png) | ![Home Dark](https://raw.githubusercontent.com/Mumtazsanjar/typeracer-pro/main/screenshots/home-dark.png) |
+### ⌨️ Typing Test
+![Typing Test](https://raw.githubusercontent.com/Mumtazsanjar/typeracer-pro/main/screenshots/test-page.png)
 
-| Typing Test | About Page |
-|---|---|
-| ![Test Page](https://raw.githubusercontent.com/Mumtazsanjar/typeracer-pro/main/screenshots/test-page.png) | ![About Page](https://raw.githubusercontent.com/Mumtazsanjar/typeracer-pro/main/screenshots/about-page.png) |
+### ℹ️ About Page
+![About Page](https://raw.githubusercontent.com/Mumtazsanjar/typeracer-pro/main/screenshots/about-page.png)
 
-| Privacy Policy | Mobile View |
-|---|---|
-| ![Privacy Page](https://raw.githubusercontent.com/Mumtazsanjar/typeracer-pro/main/screenshots/privacy-page.png) | ![Mobile View](https://raw.githubusercontent.com/Mumtazsanjar/typeracer-pro/main/screenshots/mobile-view.png) |
+### 🔒 Privacy Policy
+![Privacy Page](https://raw.githubusercontent.com/Mumtazsanjar/typeracer-pro/main/screenshots/privacy-page.png)
+
+### 📱 Mobile View
+![Mobile View](https://raw.githubusercontent.com/Mumtazsanjar/typeracer-pro/main/screenshots/mobile-view.png)
 
 ---
 
@@ -108,28 +109,14 @@
 
 ```
 typeracer-pro/
-├── index.html      # Main HTML with full on-page SEO
-├── style.css       # All styling (dark/light theme, animations)
-├── script.js       # Game logic (vanilla JS, no dependencies)
-├── robots.txt      # Crawler instructions + sitemap reference
-├── sitemap.xml     # Homepage URL with priority
-├── vercel.json     # Vercel deployment config
-└── README.md       # This file
-```
-
----
-
-## Deploy to Vercel
-
-### Option 1 — Vercel Dashboard
-1. Push to GitHub repo
-2. Go to [vercel.com](https://vercel.com) → New Project
-3. Import your GitHub repo → Deploy
-
-### Option 2 — Vercel CLI
-```bash
-npm install -g vercel
-vercel
+├── index.html        # Main HTML with full on-page SEO
+├── style.css         # All styling (dark/light theme, animations)
+├── script.js         # Game logic (vanilla JS, no dependencies)
+├── robots.txt        # Crawler instructions + sitemap reference
+├── sitemap.xml       # Homepage URL with priority
+├── vercel.json       # Vercel deployment config
+├── screenshots/      # App screenshots
+└── README.md         # This file
 ```
 
 ---
@@ -137,6 +124,13 @@ vercel
 ## Local Development
 
 Just open `index.html` in a browser — no build step, no dependencies, no install needed.
+
+---
+
+## Deploy to Vercel
+
+1. Push to GitHub
+2. Go to [vercel.com](https://vercel.com) → New Project → Import repo → Deploy
 
 ---
 
