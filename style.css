@@ -950,6 +950,99 @@ a { cursor: pointer; text-decoration: none; color: inherit; }
 }
 
 /* ============================================
+   VIRTUAL KEYBOARD
+   ============================================ */
+.vkb-wrap {
+  margin: 0 0 2rem;
+  user-select: none;
+}
+.vkb-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.6rem;
+}
+.vkb {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.85rem 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  box-shadow: var(--shadow);
+}
+.vkb-row {
+  display: flex;
+  gap: 4px;
+  justify-content: center;
+}
+.vkb-key {
+  min-width: 34px;
+  height: 34px;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-bottom: 3px solid var(--border);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  transition: background 0.08s, transform 0.08s, border-color 0.08s, color 0.08s;
+  cursor: default;
+  flex-shrink: 0;
+}
+.vkb-key.vkb-wide   { min-width: 56px; }
+.vkb-key.vkb-xwide  { min-width: 72px; }
+.vkb-key.vkb-space  { min-width: 280px; font-size: 0.68rem; color: var(--text-muted); }
+
+/* Active / pressed state */
+.vkb-key.vkb-active {
+  background: var(--accent);
+  border-color: var(--accent2);
+  border-bottom-color: var(--accent);
+  color: #fff;
+  transform: translateY(2px);
+  box-shadow: 0 0 12px var(--accent-glow);
+}
+
+/* Home row indicator dots */
+.vkb-key[data-key="f"]::after,
+.vkb-key[data-key="j"]::after {
+  content: '';
+  position: absolute;
+  bottom: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--accent2);
+  opacity: 0.6;
+}
+.vkb-key[data-key="f"],
+.vkb-key[data-key="j"] {
+  position: relative;
+}
+
+/* Hide keyboard on very small screens */
+@media (max-width: 600px) {
+  .vkb-key { min-width: 22px; height: 26px; font-size: 0.58rem; border-radius: 4px; }
+  .vkb-key.vkb-wide  { min-width: 36px; }
+  .vkb-key.vkb-xwide { min-width: 46px; }
+  .vkb-key.vkb-space { min-width: 140px; }
+  .vkb { padding: 0.5rem 0.4rem; gap: 3px; }
+  .vkb-row { gap: 3px; }
+}
+@media (max-width: 400px) {
+  .vkb-wrap { display: none; }
+}
+
+/* ============================================
    SCROLLBAR
    ============================================ */
 ::-webkit-scrollbar { width:6px; }

@@ -772,7 +772,44 @@ document.addEventListener('keydown', (e) => {
 });
 
 // ══════════════════════════════════════════
-// FAQ ACCORDION
+// VIRTUAL KEYBOARD
+// ══════════════════════════════════════════
+(function () {
+  // Build a map: key-value → DOM element(s)
+  const keyMap = {};
+  document.querySelectorAll('.vkb-key').forEach(el => {
+    const k = el.dataset.key.toLowerCase();
+    if (!keyMap[k]) keyMap[k] = [];
+    keyMap[k].push(el);
+  });
+
+  let activeTimers = {};
+
+  function pressKey(key) {
+    const k = key.toLowerCase();
+    const els = keyMap[k];
+    if (!els) return;
+
+    // Clear existing timer for this key
+    if (activeTimers[k]) clearTimeout(activeTimers[k]);
+
+    els.forEach(el => el.classList.add('vkb-active'));
+
+    // Auto-release after 180ms
+    activeTimers[k] = setTimeout(() => {
+      els.forEach(el => el.classList.remove('vkb-active'));
+      delete activeTimers[k];
+    }, 180);
+  }
+
+  // Listen on the typing input
+  document.getElementById('typing-input').addEventListener('keydown', (e) => {
+    // Map special keys
+    let key = e.key;
+    if (key === ' ') key = ' ';
+    pressKey(key);
+  });
+})();
 // ══════════════════════════════════════════
 document.querySelectorAll('.faq-q').forEach(btn => {
   btn.addEventListener('click', () => {
