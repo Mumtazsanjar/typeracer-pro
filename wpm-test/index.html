@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ═══ PRIMARY SEO ═══ -->
+  <title>Free WPM Test – Check Your Words Per Minute | TypeRacer Pro</title>
+  <meta name="description" content="Take a free WPM test online and measure your typing speed, words per minute and accuracy with TypeRacer Pro." />
+  <meta name="author" content="TypeRacer Pro" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <link rel="canonical" href="https://typeracer-pro-web.vercel.app/wpm-test/" />
+
+  <!-- ═══ OPEN GRAPH ═══ -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://typeracer-pro-web.vercel.app/wpm-test/" />
+  <meta property="og:title"       content="Free WPM Test – Check Your Words Per Minute | TypeRacer Pro" />
+  <meta property="og:description" content="Take a free WPM test online and measure your typing speed, words per minute and accuracy with TypeRacer Pro." />
+  <meta property="og:site_name"   content="TypeRacer Pro" />
+  <meta property="og:locale"      content="en_US" />
+
+  <!-- ═══ TWITTER CARD ═══ -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:url"         content="https://typeracer-pro-web.vercel.app/wpm-test/" />
+  <meta name="twitter:title"       content="Free WPM Test – TypeRacer Pro" />
+  <meta name="twitter:description" content="Check your words per minute with a free online WPM test. No signup, instant results." />
+
+  <!-- ═══ THEME & APP META ═══ -->
+  <meta name="theme-color" content="#7c6af5" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⌨️</text></svg>" />
+
+  <!-- ═══ SCHEMA.ORG – BreadcrumbList ═══ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://typeracer-pro-web.vercel.app/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "WPM Test",
+        "item": "https://typeracer-pro-web.vercel.app/wpm-test/"
+      }
+    ]
+  }
+  </script>
+
+  <!-- ═══ SCHEMA.ORG – FAQPage ═══ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What does WPM mean?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "WPM stands for Words Per Minute. It is the standard unit used to measure typing speed. Rather than counting actual words, WPM treats every 5 characters (including spaces) as one word, which makes scores comparable across different texts and typists."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How is WPM calculated?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "WPM is calculated by dividing the total number of correctly typed characters by 5 (to get a normalised word count), then dividing by the number of minutes elapsed. For example, 300 correct characters typed in 60 seconds equals 60 WPM."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is a good WPM score?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The average adult types around 40 WPM. A score of 50–70 WPM is considered good for most professional work. Regular touch typists typically reach 70–100 WPM with consistent practice."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does WPM include errors?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "In TypeRacer Pro, WPM is calculated from correctly typed characters only. Errors are tracked separately as your accuracy percentage. A high WPM with low accuracy is far less useful than a moderate WPM with near-perfect accuracy."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How can I increase my WPM?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The most effective methods are: learning touch typing (using all 10 fingers without looking at the keyboard), focusing on accuracy first and letting speed develop naturally, practising for 10–15 minutes daily, and progressively using harder difficulty levels."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is this WPM test free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. TypeRacer Pro is completely free to use with no account or sign-up required. Your results are stored only in your browser and never sent to any server."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- ═══ PERFORMANCE ═══ -->
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" />
+</head>
+<body>
+
+  <!-- Animated background blobs -->
+  <div class="bg-blob blob1"></div>
+  <div class="bg-blob blob2"></div>
+  <div class="bg-blob blob3"></div>
+
+  <!-- ══════════════════════════════
+       NAVBAR
+  ══════════════════════════════ -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo" aria-label="TypeRacer Pro Home">
+        <span class="logo-icon">⌨️</span>
+        <span class="logo-text">TypeRacer<span class="logo-accent">Pro</span></span>
+      </a>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a class="nav-link" href="/">Home</a></li>
+        <li><a class="nav-link" href="/#test">Test</a></li>
+        <li><a class="nav-link" href="/#about">About</a></li>
+        <li><a class="nav-link" href="/#privacy">Privacy</a></li>
+      </ul>
+
+      <div class="nav-controls">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+          <span class="theme-icon" id="theme-icon">🌙</span>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <div class="mobile-menu" id="mobile-menu">
+      <a class="mobile-link" href="/">Home</a>
+      <a class="mobile-link" href="/#test">Test</a>
+      <a class="mobile-link" href="/#about">About</a>
+      <a class="mobile-link" href="/#privacy">Privacy</a>
+    </div>
+  </nav>
+
+  <!-- ══════════════════════════════
+       MAIN CONTENT
+  ══════════════════════════════ -->
+  <main style="padding-top: var(--nav-h);">
+
+    <!-- ── BREADCRUMB ── -->
+    <nav class="lp-breadcrumb" aria-label="Breadcrumb">
+      <div class="lp-breadcrumb-inner">
+        <ol>
+          <li><a href="/">Home</a></li>
+          <li aria-hidden="true">›</li>
+          <li aria-current="page">WPM Test</li>
+        </ol>
+      </div>
+    </nav>
+
+    <!-- ── HERO ── -->
+    <section class="lp-hero">
+      <div class="lp-hero-inner">
+        <div class="hero-badge">📏 Free Words Per Minute Test</div>
+        <h1 class="hero-title">
+          Free<br/>
+          <span class="gradient-text">WPM Test</span>
+        </h1>
+        <p class="hero-subtitle">
+          Measure your words per minute in under two minutes. Get an accurate WPM score,
+          accuracy percentage, and a full breakdown — no account required.
+        </p>
+        <div class="hero-actions">
+          <a href="https://typeracer-pro-web.vercel.app/#test" class="btn btn-primary btn-lg">
+            ⚡ Take the WPM Test
+          </a>
+          <a href="#what-is-wpm" class="btn btn-outline btn-lg">
+            What Is WPM? ↓
+          </a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <span class="hero-stat-value">90+</span>
+            <span class="hero-stat-label">Text Passages</span>
+          </div>
+          <div class="hero-stat-divider"></div>
+          <div class="hero-stat">
+            <span class="hero-stat-value">3</span>
+            <span class="hero-stat-label">Difficulty Levels</span>
+          </div>
+          <div class="hero-stat-divider"></div>
+          <div class="hero-stat">
+            <span class="hero-stat-value">100%</span>
+            <span class="hero-stat-label">Free Forever</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Mock Card -->
+      <div class="hero-visual">
+        <div class="mock-card">
+          <div class="mock-stats">
+            <div class="mock-stat"><span class="mock-val">64</span><span class="mock-lbl">WPM</span></div>
+            <div class="mock-stat"><span class="mock-val">97%</span><span class="mock-lbl">Accuracy</span></div>
+            <div class="mock-stat"><span class="mock-val">60s</span><span class="mock-lbl">Time</span></div>
+          </div>
+          <div class="mock-text">
+            <span class="m-correct">Words per minute</span>
+            <span class="m-current"> t</span><span class="m-pending">racks your typing rate</span>
+          </div>
+          <div class="mock-bar"><div class="mock-fill"></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CONTENT GUIDE ── -->
+    <section class="features-section" style="padding-top: 0;" id="what-is-wpm">
+      <h2 class="section-title">Everything About WPM</h2>
+      <p class="section-subtitle">Understand what your score means, how it's measured, and how to raise it.</p>
+
+      <div class="seo-guide-grid">
+
+        <!-- What WPM Means -->
+        <article class="feature-card seo-card" aria-labelledby="wpm-what">
+          <div class="feature-icon">📏</div>
+          <h2 id="wpm-what">What Does WPM Mean?</h2>
+          <p><strong>WPM stands for Words Per Minute</strong> — the standard unit for measuring typing speed. It tells you how many words you can type in one minute under test conditions.</p>
+          <p>Rather than counting actual words (which vary wildly in length), WPM uses a normalised definition: <strong>every 5 characters — including spaces and punctuation — counts as one word</strong>. This makes your score consistent and comparable across different tests and texts.</p>
+          <p>WPM is used professionally to benchmark typists, assess data-entry speed, and track personal improvement over time. It's the single most widely used metric in any <a href="/typing-speed-test/" style="color:var(--accent2);text-decoration:none;">typing speed test</a>.</p>
+        </article>
+
+        <!-- How WPM Is Calculated -->
+        <article class="feature-card seo-card" aria-labelledby="wpm-calc">
+          <div class="feature-icon">🔢</div>
+          <h2 id="wpm-calc">How Is WPM Calculated?</h2>
+          <p>The formula is straightforward:</p>
+          <p style="background:var(--surface2);border:1px solid var(--border);border-radius:var(--radius-sm);padding:0.75rem 1rem;font-size:0.875rem;margin:0.5rem 0;">
+            <strong>WPM = (Correct characters ÷ 5) ÷ Minutes elapsed</strong>
+          </p>
+          <p>A worked example: you type <strong>320 correct characters</strong> in <strong>60 seconds</strong>.</p>
+          <ul class="tips-list">
+            <li>320 ÷ 5 = 64 normalised words</li>
+            <li>64 ÷ 1 minute = <strong>64 WPM</strong></li>
+          </ul>
+          <p>TypeRacer Pro counts only correctly submitted characters — errors are tracked separately as your accuracy percentage. This keeps WPM honest and comparable.</p>
+        </article>
+
+        <!-- Why WPM Matters -->
+        <article class="feature-card seo-card" aria-labelledby="wpm-why">
+          <div class="feature-icon">💼</div>
+          <h2 id="wpm-why">Why WPM Matters</h2>
+          <p>Typing is one of the most frequently performed tasks on a computer. The difference between 40 WPM and 70 WPM can save <strong>hours per week</strong> for someone who writes code, documents, emails, or reports for a living.</p>
+          <ul class="tips-list">
+            <li><strong>Developers</strong> — faster typing means less friction between thought and code</li>
+            <li><strong>Writers &amp; journalists</strong> — higher WPM lets you keep pace with your thinking</li>
+            <li><strong>Data-entry roles</strong> — WPM is often a formal hiring requirement</li>
+            <li><strong>Students</strong> — faster note-taking improves lecture retention</li>
+            <li><strong>Customer support</strong> — faster responses per conversation, lower handle times</li>
+          </ul>
+          <p>Even outside professional contexts, faster and more accurate typing simply reduces friction. Any time you spend fighting the keyboard is time not spent on the actual task.</p>
+        </article>
+
+        <!-- WPM vs Accuracy -->
+        <article class="feature-card seo-card" aria-labelledby="wpm-accuracy">
+          <div class="feature-icon">⚖️</div>
+          <h2 id="wpm-accuracy">WPM vs Accuracy: Which Matters More?</h2>
+          <p>This is probably the most common misconception in typing improvement. Speed and accuracy are not opposing forces — <strong>accuracy enables speed</strong>.</p>
+          <p>Every error you make costs time: you pause, backspace, and retype. At high error rates the correction overhead can fully cancel out the gains from typing faster. Consider:</p>
+          <ul class="tips-list">
+            <li>60 WPM at 95% accuracy → ~57 effective WPM</li>
+            <li>60 WPM at 80% accuracy → ~48 effective WPM (after corrections)</li>
+            <li>50 WPM at 99% accuracy → ~49.5 effective WPM</li>
+          </ul>
+          <p>The practical takeaway: <strong>build accuracy first, then push speed</strong>. A solid 95%+ accuracy at any speed gives you a foundation that scales. Chasing raw WPM without accuracy is slower progress in the long run.</p>
+        </article>
+
+        <!-- WPM Ranges -->
+        <article class="feature-card seo-card" aria-labelledby="wpm-ranges">
+          <div class="feature-icon">📊</div>
+          <h2 id="wpm-ranges">What Different WPM Scores Mean</h2>
+          <p>WPM benchmarks vary by source. These ranges reflect general real-world usage rather than any single authoritative study:</p>
+          <ul class="tips-list">
+            <li><strong>Under 30 WPM</strong> — below the general adult average; the biggest gains come at this stage with focused practice</li>
+            <li><strong>30–50 WPM</strong> — around average for everyday keyboard users; functional for most tasks</li>
+            <li><strong>50–70 WPM</strong> — good; comfortably above average and suitable for most professional roles</li>
+            <li><strong>70–100 WPM</strong> — fast; typical of experienced touch typists who practise regularly</li>
+            <li><strong>100+ WPM</strong> — very fast; reached through years of deliberate, focused practice</li>
+          </ul>
+          <p>Compare your own results over time rather than fixating on an absolute number. Consistent upward movement over weeks of practice is the real success metric.</p>
+        </article>
+
+        <!-- How to Improve WPM -->
+        <article class="feature-card seo-card" aria-labelledby="wpm-improve">
+          <div class="feature-icon">🚀</div>
+          <h2 id="wpm-improve">How to Improve Your WPM</h2>
+          <p>WPM improvements come from technique and consistency, not just practice volume:</p>
+          <ul class="tips-list">
+            <li><strong>Touch typing</strong> — learn the home-row positions (left hand: ASDF, right hand: JKL;) and stop looking at the keyboard. This is the highest-leverage change most typists can make.</li>
+            <li><strong>Accuracy-first mindset</strong> — slow down until you hit 95%+ accuracy consistently, then gradually increase pace. Muscle memory built with errors is harder to undo later.</li>
+            <li><strong>Daily short sessions</strong> — 10 to 15 focused minutes per day beats a single long session once a week. Frequency matters more than duration.</li>
+            <li><strong>Progressive difficulty</strong> — start on Easy, move to Medium once your accuracy stabilises, then challenge yourself with Hard passages.</li>
+            <li><strong>Target your weak spots</strong> — note which key combinations or characters consistently trip you up and drill those specifically.</li>
+            <li><strong>Relaxed posture</strong> — keep wrists slightly raised and hands relaxed. Tension slows down finger movement and causes more errors.</li>
+          </ul>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ── MID-PAGE CTA ── -->
+    <section class="cta-section">
+      <h2>Check your WPM right now.</h2>
+      <p>Free, instant, and no sign-up required. See where you stand in under 60 seconds.</p>
+      <a href="https://typeracer-pro-web.vercel.app/#test" class="btn btn-primary btn-lg">
+        ⚡ Start Free WPM Test
+      </a>
+    </section>
+
+    <!-- ── FAQ ── -->
+    <section class="faq-section" id="faq" aria-labelledby="faq-heading">
+      <div class="faq-inner">
+        <h2 class="section-title" id="faq-heading">Frequently Asked Questions</h2>
+        <p class="section-subtitle">Common questions about WPM and online typing tests.</p>
+        <div class="faq-list">
+
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">
+              <span>What does WPM mean?</span>
+              <span class="faq-arrow">▾</span>
+            </button>
+            <div class="faq-a" hidden>
+              <p><strong>WPM stands for Words Per Minute.</strong> It measures how many words you type in one minute, where every 5 characters counts as one word. This normalisation makes scores consistent across different texts and tests.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">
+              <span>How is WPM calculated?</span>
+              <span class="faq-arrow">▾</span>
+            </button>
+            <div class="faq-a" hidden>
+              <p>The formula is <strong>(correct characters ÷ 5) ÷ minutes elapsed</strong>. TypeRacer Pro counts only correctly typed characters — errors are excluded from WPM and tracked separately as your accuracy percentage.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">
+              <span>What is a good WPM score?</span>
+              <span class="faq-arrow">▾</span>
+            </button>
+            <div class="faq-a" hidden>
+              <p>The average adult types around <strong>40 WPM</strong>. A score of 50–70 WPM is considered good for professional use. Experienced touch typists typically reach 70–100 WPM with regular practice.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">
+              <span>Does WPM include errors?</span>
+              <span class="faq-arrow">▾</span>
+            </button>
+            <div class="faq-a" hidden>
+              <p>In TypeRacer Pro, <strong>WPM is based on correct characters only</strong>. Errors are tracked as a separate accuracy percentage. This gives a more honest picture of your effective typing output.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">
+              <span>How can I increase my WPM?</span>
+              <span class="faq-arrow">▾</span>
+            </button>
+            <div class="faq-a" hidden>
+              <p>Learn <strong>touch typing</strong>, focus on accuracy before speed, practise for 10–15 minutes daily, and gradually increase difficulty. See the guide above for a full breakdown of what works.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">
+              <span>Is this WPM test free?</span>
+              <span class="faq-arrow">▾</span>
+            </button>
+            <div class="faq-a" hidden>
+              <p>Yes — <strong>completely free</strong>, no account needed, no ads. Your results are stored only in your browser's localStorage. Nothing is ever sent to a server.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── INTERNAL LINKS ── -->
+    <section class="features-section" style="padding-bottom: 3rem; padding-top: 2rem;">
+      <h2 class="section-title">More From TypeRacer Pro</h2>
+      <p class="section-subtitle">Other pages and resources you might find useful.</p>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">⌨️</div>
+          <h3><a href="/typing-speed-test/" style="color:inherit;text-decoration:none;">Typing Speed Test</a></h3>
+          <p>The full guide to typing speed tests — what they measure, how to read your results, and how to improve. <a href="/typing-speed-test/" style="color:var(--accent2);text-decoration:none;">Read more →</a></p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🏆</div>
+          <h3><a href="https://typeracer-pro-web.vercel.app/#test" style="color:inherit;text-decoration:none;">Take the Test</a></h3>
+          <p>Jump straight into a timed typing test. Choose 30s, 60s, or 120s and see your WPM and accuracy in real time. <a href="https://typeracer-pro-web.vercel.app/#test" style="color:var(--accent2);text-decoration:none;">Start now →</a></p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">ℹ️</div>
+          <h3><a href="https://typeracer-pro-web.vercel.app/#about" style="color:inherit;text-decoration:none;">About TypeRacer Pro</a></h3>
+          <p>Learn how the app works, what the rating system means, and tips for getting the most out of your practice sessions. <a href="https://typeracer-pro-web.vercel.app/#about" style="color:var(--accent2);text-decoration:none;">Learn more →</a></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── FINAL CTA ── -->
+    <section class="cta-section" style="padding-top: 0;">
+      <h2>Ready to measure your WPM?</h2>
+      <p>Start a free test now — results in 30 seconds, no sign-up needed.</p>
+      <a href="https://typeracer-pro-web.vercel.app/#test" class="btn btn-primary btn-lg">
+        Take the WPM Test →
+      </a>
+    </section>
+
+  </main>
+
+  <!-- ══════════════════════════════
+       FOOTER
+  ══════════════════════════════ -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <span aria-hidden="true">⌨️</span>
+            <span>TypeRacer<span class="logo-accent">Pro</span></span>
+          </div>
+          <p class="footer-tagline">Free online typing speed test — no signup, no ads, no tracking.</p>
+        </div>
+        <nav class="footer-nav" aria-label="Footer navigation">
+          <div class="footer-nav-col">
+            <span class="footer-nav-heading">Pages</span>
+            <a href="/">Home</a>
+            <a href="/#test">Typing Test</a>
+            <a href="/#about">About</a>
+            <a href="/#privacy">Privacy Policy</a>
+          </div>
+          <div class="footer-nav-col">
+            <span class="footer-nav-heading">Resources</span>
+            <a href="/typing-speed-test/">Typing Speed Test</a>
+            <a href="/wpm-test/">WPM Test</a>
+          </div>
+          <div class="footer-nav-col">
+            <span class="footer-nav-heading">Test Modes</span>
+            <a href="/#test">30 Second Test</a>
+            <a href="/#test">60 Second Test</a>
+            <a href="/#test">120 Second Test</a>
+          </div>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2026 TypeRacerPro · Free &amp; Open Source · No data collected</p>
+        <div class="footer-bottom-links">
+          <a href="/#privacy">Privacy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ══════════════════════════════
+       INLINE SCRIPT — theme + mobile menu + FAQ
+       (script.js is SPA-only and not loaded here)
+  ══════════════════════════════ -->
+  <script>
+    // ── Theme Toggle ──────────────────────────
+    const $html   = document.documentElement;
+    const $toggle = document.getElementById('theme-toggle');
+    const $icon   = document.getElementById('theme-icon');
+
+    function setTheme(t) {
+      $html.setAttribute('data-theme', t);
+      $icon.textContent = t === 'dark' ? '🌙' : '☀️';
+      localStorage.setItem('typeracer_theme', t);
+    }
+    setTheme(localStorage.getItem('typeracer_theme') || 'dark');
+
+    $toggle.addEventListener('click', () => {
+      setTheme($html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+    });
+
+    // ── Mobile Hamburger ──────────────────────
+    const $hamburger  = document.getElementById('hamburger');
+    const $mobileMenu = document.getElementById('mobile-menu');
+
+    $hamburger.addEventListener('click', () => {
+      const isOpen = $mobileMenu.classList.toggle('open');
+      $hamburger.classList.toggle('open', isOpen);
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!$hamburger.contains(e.target) && !$mobileMenu.contains(e.target)) {
+        $mobileMenu.classList.remove('open');
+        $hamburger.classList.remove('open');
+      }
+    });
+
+    // ── FAQ Accordion ─────────────────────────
+    document.querySelectorAll('.faq-q').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item   = btn.closest('.faq-item');
+        const isOpen = btn.getAttribute('aria-expanded') === 'true';
+
+        document.querySelectorAll('.faq-item').forEach(i => {
+          i.classList.remove('open');
+          i.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
+          i.querySelector('.faq-a').hidden = true;
+        });
+
+        if (!isOpen) {
+          item.classList.add('open');
+          btn.setAttribute('aria-expanded', 'true');
+          item.querySelector('.faq-a').hidden = false;
+        }
+      });
+    });
+  </script>
+</body>
+</html>
