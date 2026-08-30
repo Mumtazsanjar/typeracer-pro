@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ═══ PRIMARY SEO ═══ -->
+  <title>Free Typing Practice Online – Improve Speed &amp; Accuracy | TypeRacer Pro</title>
+  <meta name="description" content="Practice typing online for free with TypeRacer Pro. Improve typing speed, accuracy and keyboard skills with regular typing practice." />
+  <meta name="author" content="TypeRacer Pro" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <link rel="canonical" href="https://typeracer-pro-web.vercel.app/typing-practice/" />
+
+  <!-- ═══ OPEN GRAPH ═══ -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://typeracer-pro-web.vercel.app/typing-practice/" />
+  <meta property="og:title"       content="Free Typing Practice Online – Improve Speed &amp; Accuracy | TypeRacer Pro" />
+  <meta property="og:description" content="Practice typing online for free with TypeRacer Pro. Improve typing speed, accuracy and keyboard skills with regular typing practice." />
+  <meta property="og:site_name"   content="TypeRacer Pro" />
+  <meta property="og:locale"      content="en_US" />
+
+  <!-- ═══ TWITTER CARD ═══ -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:url"         content="https://typeracer-pro-web.vercel.app/typing-practice/" />
+  <meta name="twitter:title"       content="Free Typing Practice Online – TypeRacer Pro" />
+  <meta name="twitter:description" content="Improve your typing speed and accuracy with free online typing practice. No signup needed." />
+
+  <!-- ═══ THEME & APP META ═══ -->
+  <meta name="theme-color" content="#7c6af5" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⌨️</text></svg>" />
+
+  <!-- ═══ SCHEMA.ORG – BreadcrumbList ═══ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://typeracer-pro-web.vercel.app/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Typing Practice",
+        "item": "https://typeracer-pro-web.vercel.app/typing-practice/"
+      }
+    ]
+  }
+  </script>
+
+  <!-- ═══ SCHEMA.ORG – FAQPage ═══ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do I start typing practice as a beginner?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Start with Easy mode in TypeRacer Pro, which uses short common words. Focus on typing accurately at a comfortable pace before worrying about speed. Practise for 10–15 minutes daily and keep track of your accuracy percentage — aim for 95% or above before increasing pace."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is touch typing and should I learn it?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Touch typing means typing without looking at the keyboard, using all 10 fingers assigned to their designated keys. The home row (ASDF on the left, JKL; on the right) acts as an anchor for all finger movement. Learning touch typing is the single highest-impact improvement most typists can make, though it requires a few weeks of deliberate practice to build the muscle memory."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long should I practise typing each day?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "10 to 15 focused minutes daily produces consistent results for most people. Frequency matters more than session length — practising every day for two weeks beats one long session per week. Short, consistent sessions build muscle memory more effectively than occasional marathon practice."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Should I focus on speed or accuracy when practising?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Always focus on accuracy first. Typing fast with many errors reinforces poor habits and actually slows your real-world output because corrections take time. Aim for 95% or higher accuracy at any pace before pushing for more speed."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does it take to improve typing speed?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Most people see measurable improvement within two to four weeks of consistent daily practice. Significant improvements — such as moving from 30 WPM to 60 WPM — typically take several months of regular, deliberate practice. The rate depends on starting skill level, technique, and practice consistency."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can TypeRacer Pro be used as a typing practice tool?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. TypeRacer Pro offers 90+ text passages across three difficulty levels (Easy, Medium, Hard) and three timed modes (30s, 60s, 120s). The live WPM counter, letter-by-letter accuracy feedback, and score history make it well suited for structured daily practice sessions."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- ═══ PERFORMANCE ═══ -->
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" />
+</head>
+<body>
+
+  <!-- Animated background blobs -->
+  <div class="bg-blob blob1"></div>
+  <div class="bg-blob blob2"></div>
+  <div class="bg-blob blob3"></div>
+
+  <!-- ══════════════════════════════
+       NAVBAR
+  ══════════════════════════════ -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo" aria-label="TypeRacer Pro Home">
+        <span class="logo-icon">⌨️</span>
+        <span class="logo-text">TypeRacer<span class="logo-accent">Pro</span></span>
+      </a>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a class="nav-link" href="/">Home</a></li>
+        <li><a class="nav-link" href="/#test">Test</a></li>
+        <li><a class="nav-link" href="/#about">About</a></li>
+        <li><a class="nav-link" href="/#privacy">Privacy</a></li>
+      </ul>
+
+      <div class="nav-controls">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+          <span class="theme-icon" id="theme-icon">🌙</span>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <div class="mobile-menu" id="mobile-menu">
+      <a class="mobile-link" href="/">Home</a>
+      <a class="mobile-link" href="/#test">Test</a>
+      <a class="mobile-link" href="/#about">About</a>
+      <a class="mobile-link" href="/#privacy">Privacy</a>
+    </div>
+  </nav>
+
+  <!-- ══════════════════════════════
+       MAIN CONTENT
+  ══════════════════════════════ -->
+  <main style="padding-top: var(--nav-h);">
+
+    <!-- ── BREADCRUMB ── -->
+    <nav class="lp-breadcrumb" aria-label="Breadcrumb">
+      <div class="lp-breadcrumb-inner">
+        <ol>
+          <li><a href="/">Home</a></li>
+          <li aria-hidden="true">›</li>
+          <li aria-current="page">Typing Practice</li>
+        </ol>
+      </div>
+    </nav>
+
+    <!-- ── HERO ── -->
+    <section class="lp-hero">
+      <div class="lp-hero-inner">
+        <div class="hero-badge">🎯 Free Online Typing Practice</div>
+        <h1 class="hero-title">
+          Free Typing<br/>
+          <span class="gradient-text">Practice Online</span>
+        </h1>
+        <p class="hero-subtitle">
+          Build faster, more accurate typing habits with regular practice sessions.
+          Choose your difficulty, pick a duration, and get instant feedback on
+          every keystroke — no account needed.
+        </p>
+        <div class="hero-actions">
+          <a href="https://typeracer-pro-web.vercel.app/#test" class="btn btn-primary btn-lg">
+            ⚡ Start Practising Now
+          </a>
+          <a href="#why-typing-practice" class="btn btn-outline btn-lg">
+            How It Works ↓
+          </a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <span class="hero-stat-value">3</span>
+            <span class="hero-stat-label">Difficulty Levels</span>
+          </div>
+          <div class="hero-stat-divider"></div>
+          <div class="hero-stat">
+            <span class="hero-stat-value">90+</span>
+            <span class="hero-stat-label">Practice Passages</span>
+          </div>
+          <div class="hero-stat-divider"></div>
+          <div class="hero-stat">
+            <span class="hero-stat-value">100%</span>
+            <span class="hero-stat-label">Free Forever</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Mock Card -->
+      <div class="hero-visual">
+        <div class="mock-card">
+          <div class="mock-stats">
+            <div class="mock-stat"><span class="mock-val">52</span><span class="mock-lbl">WPM</span></div>
+            <div class="mock-stat"><span class="mock-val">96%</span><span class="mock-lbl">Accuracy</span></div>
+            <div class="mock-stat"><span class="mock-val">60s</span><span class="mock-lbl">Time</span></div>
+          </div>
+          <div class="mock-text">
+            <span class="m-correct">Practice makes</span>
+            <span class="m-current"> p</span><span class="m-pending">erfect typing habits</span>
+          </div>
+          <div class="mock-bar"><div class="mock-fill"></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── PRACTICE FEATURES ── -->
+    <section class="features-section">
+      <h2 class="section-title">Built for Daily Typing Practice</h2>
+      <p class="section-subtitle">Everything you need to make practice sessions focused and measurable.</p>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">🌱</div>
+          <h3>Easy Mode for Beginners</h3>
+          <p>Short, common words designed for beginners building confidence and base accuracy before moving to longer texts.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📈</div>
+          <h3>Progressive Difficulty</h3>
+          <p>Move from Easy to Medium to Hard as your accuracy stabilises. Each level introduces more complex vocabulary and sentence structures.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">⚡</div>
+          <h3>Live WPM &amp; Accuracy</h3>
+          <p>Your words per minute and accuracy percentage update in real time so you can monitor your pace throughout each session.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🎯</div>
+          <h3>Instant Error Feedback</h3>
+          <p>Each character highlights green for correct, red for incorrect the moment you type it — so you can feel your mistakes immediately.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📊</div>
+          <h3>Practice History</h3>
+          <p>Your last 10 sessions are saved locally so you can track whether your WPM and accuracy are trending upward week over week.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">⏱️</div>
+          <h3>Flexible Session Length</h3>
+          <p>30 seconds for a quick check-in, 60 seconds for a standard session, or 120 seconds for a thorough and consistent measurement.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── GUIDE CONTENT ── -->
+    <section class="features-section" style="padding-top: 0;" id="why-typing-practice">
+      <h2 class="section-title">A Practical Guide to Typing Practice</h2>
+      <p class="section-subtitle">How to practise effectively, what to focus on, and how to track real progress.</p>
+
+      <div class="seo-guide-grid">
+
+        <!-- Why Practice Matters -->
+        <article class="feature-card seo-card" aria-labelledby="tp-why">
+          <div class="feature-icon">💡</div>
+          <h2 id="tp-why">Why Typing Practice Matters</h2>
+          <p>Typing is one of the most repeated physical tasks in knowledge work. The average office worker types for several hours every day — which means even a modest improvement in speed and accuracy compounds into hours saved each week.</p>
+          <p>Beyond raw time savings, comfortable typing reduces cognitive friction. When the physical act of typing demands attention, less mental energy is available for the actual work — writing, coding, analysis. Fast, accurate typing fades into the background and lets you focus on what you're producing.</p>
+          <p>Typing skill also doesn't degrade quickly once built. Unlike many skills that fade without constant use, muscle memory for touch typing is durable — making the investment in deliberate practice pay off for years.</p>
+        </article>
+
+        <!-- Typing Practice for Beginners -->
+        <article class="feature-card seo-card" aria-labelledby="tp-beginners">
+          <div class="feature-icon">🌱</div>
+          <h2 id="tp-beginners">Typing Practice for Beginners</h2>
+          <p>If you're just starting out, the temptation is to jump straight to longer texts and push for speed. Resist that. The fundamentals matter far more at the beginning:</p>
+          <ul class="tips-list">
+            <li><strong>Start with Easy mode</strong> — short, common words let you focus on accuracy without being overwhelmed by unfamiliar vocabulary</li>
+            <li><strong>Use the 30-second test first</strong> — it's enough to measure your baseline without fatigue affecting your results</li>
+            <li><strong>Aim for 95%+ accuracy before increasing pace</strong> — errors at low speeds become errors at high speeds; fix them early</li>
+            <li><strong>Practise every day, not once a week</strong> — even 10 minutes daily builds muscle memory far faster than a single long session</li>
+            <li><strong>Don't look at the keyboard</strong> — even if it's uncomfortable at first, looking away forces the finger positioning habits that enable long-term speed</li>
+          </ul>
+        </article>
+
+        <!-- Touch Typing -->
+        <article class="feature-card seo-card" aria-labelledby="tp-touch">
+          <div class="feature-icon">🖐️</div>
+          <h2 id="tp-touch">Learning Touch Typing</h2>
+          <p><strong>Touch typing</strong> — typing without looking at the keyboard — is the foundational technique behind every fast typist. It works by assigning each finger a dedicated set of keys, anchored to the home row.</p>
+          <h3 style="font-size:0.9rem;font-weight:700;margin:0.75rem 0 0.4rem;color:var(--text-primary);">Home Row Positions</h3>
+          <ul class="tips-list">
+            <li><strong>Left hand:</strong> index → F, middle → D, ring → S, little → A</li>
+            <li><strong>Right hand:</strong> index → J, middle → K, ring → L, little → ;</li>
+            <li>Most keyboards have small bumps on F and J to locate your hands without looking</li>
+          </ul>
+          <p>From these anchor positions, each finger reaches up, down, or sideways to its designated keys. The fingers return to home row after every key press. This minimises hand movement, reduces hesitation, and is the core reason touch typists are faster than hunt-and-peck typists — even those who have been hunt-and-peck typing for years.</p>
+          <p>Expect a temporary slowdown when you first switch to touch typing. That's normal. Within two to four weeks of deliberate practice, most people surpass their pre-touch-typing speed — and keep improving from there.</p>
+        </article>
+
+        <!-- Accuracy Before Speed -->
+        <article class="feature-card seo-card" aria-labelledby="tp-accuracy">
+          <div class="feature-icon">🎯</div>
+          <h2 id="tp-accuracy">Accuracy Before Speed</h2>
+          <p>This is the single most important principle in typing practice — and the one most beginners ignore. Typing fast with lots of errors doesn't just give a low test score; it actively builds the wrong habits.</p>
+          <p>When you rush and mistype repeatedly, your brain learns those incorrect key sequences. Correcting a deeply ingrained error pattern later is harder than building correct habits from the start.</p>
+          <p>The practical approach:</p>
+          <ul class="tips-list">
+            <li>Set a pace that lets you maintain <strong>95% accuracy or above</strong></li>
+            <li>If accuracy drops below 90%, <strong>slow down</strong> — not up</li>
+            <li>Speed will increase naturally as the correct patterns become automatic</li>
+            <li>Use TypeRacer Pro's accuracy display to monitor every session</li>
+          </ul>
+          <p>Think of it this way: speed is accuracy at scale. The path to 80 WPM runs through clean 40 WPM, not through sloppy 60 WPM.</p>
+        </article>
+
+        <!-- Daily Practice -->
+        <article class="feature-card seo-card" aria-labelledby="tp-daily">
+          <div class="feature-icon">📅</div>
+          <h2 id="tp-daily">How to Structure Daily Practice</h2>
+          <p>Consistency matters more than session length. Here's a simple framework that works for most people:</p>
+          <ul class="tips-list">
+            <li><strong>Warm up (2–3 min)</strong> — one or two 30-second tests on Easy to get your fingers moving and calibrated</li>
+            <li><strong>Main practice (8–10 min)</strong> — two or three 60-second tests on your current difficulty level, focusing on accuracy</li>
+            <li><strong>Challenge round (optional, 2 min)</strong> — one test one level above your usual to push your ceiling</li>
+          </ul>
+          <p>That's roughly 10–15 minutes total. At this cadence, most people see measurable WPM improvement within two to three weeks. After six to eight weeks of consistent practice, improvements of 20–30 WPM are common for people starting in the 30–50 WPM range.</p>
+          <p>Use the history section in TypeRacer Pro to compare your scores across sessions. Look at the trend over a week, not individual results — daily variance is normal.</p>
+        </article>
+
+        <!-- Tracking Improvement -->
+        <article class="feature-card seo-card" aria-labelledby="tp-track">
+          <div class="feature-icon">📊</div>
+          <h2 id="tp-track">How to Track Your Improvement</h2>
+          <p>Progress in typing practice can feel slow day-to-day, but it's visible over weeks. Here's how to measure it meaningfully:</p>
+          <ul class="tips-list">
+            <li><strong>Use the same test duration</strong> — always compare 60s to 60s or 120s to 120s. A 30s score will always be higher than a 120s score and they aren't comparable</li>
+            <li><strong>Track accuracy alongside WPM</strong> — a rising WPM with falling accuracy means you're pushing too hard; a rising WPM with stable accuracy means genuine improvement</li>
+            <li><strong>Check history weekly</strong> — TypeRacer Pro saves your last 10 results locally; review them at the end of each week</li>
+            <li><strong>Note your personal best</strong> — milestone scores (50 WPM, 60 WPM, 70 WPM) are useful motivational markers</li>
+          </ul>
+          <p>Plateaus are normal and expected. They usually mean a technique habit needs refinement rather than more volume. If you've been stuck at the same WPM for two weeks, try slowing down 5–10% and rebuilding from a more accurate base.</p>
+        </article>
+
+        <!-- TypeRacer Pro for Practice -->
+        <article class="feature-card seo-card seo-card-cta" aria-labelledby="tp-use">
+          <div class="feature-icon">⌨️</div>
+          <h2 id="tp-use">Using TypeRacer Pro for Typing Practice</h2>
+          <p>TypeRacer Pro is designed around the same principles described in this guide. Every feature supports deliberate practice:</p>
+          <ul class="tips-list">
+            <li><strong>Easy / Medium / Hard modes</strong> — progress naturally through difficulty as your accuracy stabilises</li>
+            <li><strong>30s / 60s / 120s timers</strong> — match your session length to your available time and goals</li>
+            <li><strong>Live WPM counter</strong> — see your words per minute update in real time and learn to pace yourself</li>
+            <li><strong>Letter-by-letter highlighting</strong> — immediate green/red feedback on every character, so you feel errors as they happen</li>
+            <li><strong>Score history</strong> — your last 10 results are saved automatically for progress tracking</li>
+            <li><strong>90+ passages</strong> — variety keeps practice from becoming mechanical repetition of the same text</li>
+          </ul>
+          <p>No account, no ads, no tracking. Just open the test and start. Your browser saves your settings and history between sessions.</p>
+          <div class="seo-cta-action">
+            <a href="https://typeracer-pro-web.vercel.app/#test" class="btn btn-primary btn-lg">
+              ⚡ Start Your Typing Practice
+            </a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ── MID-PAGE CTA ── -->
+    <section class="cta-section">
+      <h2>Start building better typing habits today.</h2>
+      <p>Free, instant, and no sign-up required. Pick a difficulty and begin.</p>
+      <a href="https://typeracer-pro-web.vercel.app/#test" class="btn btn-primary btn-lg">
+        Begin Typing Practice →
+      </a>
+    </section>
+
+    <!-- ── FAQ ── -->
+    <section class="faq-section" id="faq" aria-labelledby="faq-heading">
+      <div class="faq-inner">
+        <h2 class="section-title" id="faq-heading">Frequently Asked Questions</h2>
+        <p class="section-subtitle">Common questions about typing practice and how to improve.</p>
+        <div class="faq-list">
+
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">
+              <span>How do I start typing practice as a beginner?</span>
+              <span class="faq-arrow">▾</span>
+            </button>
+            <div class="faq-a" hidden>
+              <p>Start with <strong>Easy mode</strong> and focus on accuracy over speed. Aim for 95%+ accuracy at a comfortable pace before trying to type faster. Practise for 10–15 minutes daily — frequency matters more than session length when building muscle memory.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">
+              <span>What is touch typing and should I learn it?</span>
+              <span class="faq-arrow">▾</span>
+            </button>
+            <div class="faq-a" hidden>
+              <p>Touch typing means typing without looking at the keyboard using all 10 fingers. It's anchored to the <strong>home row</strong> (left: ASDF, right: JKL;). Learning it causes a temporary slowdown but leads to significantly higher long-term speed. Most serious typists consider it essential.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">
+              <span>How long should I practise typing each day?</span>
+              <span class="faq-arrow">▾</span>
+            </button>
+            <div class="faq-a" hidden>
+              <p><strong>10 to 15 minutes daily</strong> is enough to see consistent improvement. Short, frequent sessions build muscle memory more effectively than occasional long ones. Even 2–3 sixty-second tests per day adds up quickly over weeks.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">
+              <span>Should I focus on speed or accuracy when practising?</span>
+              <span class="faq-arrow">▾</span>
+            </button>
+            <div class="faq-a" hidden>
+              <p><strong>Always accuracy first.</strong> Speed built on poor accuracy ingrains bad habits that are harder to fix later. Aim for 95%+ accuracy consistently, then gradually increase your pace. Speed follows naturally from clean, accurate typing.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">
+              <span>How long does it take to improve typing speed?</span>
+              <span class="faq-arrow">▾</span>
+            </button>
+            <div class="faq-a" hidden>
+              <p>Most people see measurable improvement within <strong>two to four weeks</strong> of consistent daily practice. Moving from 30 WPM to 60 WPM typically takes several months. The rate depends on your starting level, technique, and how consistently you practise.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">
+              <span>Can TypeRacer Pro be used as a typing practice tool?</span>
+              <span class="faq-arrow">▾</span>
+            </button>
+            <div class="faq-a" hidden>
+              <p>Yes. With <strong>90+ passages, three difficulty levels, three timed modes, live feedback, and score history</strong>, TypeRacer Pro is well suited for structured daily practice. It's free, requires no account, and works in any modern browser.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── INTERNAL LINKS ── -->
+    <section class="features-section" style="padding-bottom: 3rem; padding-top: 2rem;">
+      <h2 class="section-title">Related Pages</h2>
+      <p class="section-subtitle">More typing resources from TypeRacer Pro.</p>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">⌨️</div>
+          <h3><a href="/typing-speed-test/" style="color:inherit;text-decoration:none;">Typing Speed Test</a></h3>
+          <p>A full guide to typing speed tests — WPM explained, how results are calculated, and how to interpret your score. <a href="/typing-speed-test/" style="color:var(--accent2);text-decoration:none;">Read more →</a></p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📏</div>
+          <h3><a href="/wpm-test/" style="color:inherit;text-decoration:none;">WPM Test</a></h3>
+          <p>Everything about Words Per Minute — what it means, how it's calculated, and what different WPM scores represent. <a href="/wpm-test/" style="color:var(--accent2);text-decoration:none;">Read more →</a></p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🏆</div>
+          <h3><a href="https://typeracer-pro-web.vercel.app/#test" style="color:inherit;text-decoration:none;">Start the Test</a></h3>
+          <p>Jump straight into a timed typing test. Choose your difficulty, pick a duration, and see your WPM and accuracy instantly. <a href="https://typeracer-pro-web.vercel.app/#test" style="color:var(--accent2);text-decoration:none;">Start now →</a></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── FINAL CTA ── -->
+    <section class="cta-section" style="padding-top: 0;">
+      <h2>Ready to practise?</h2>
+      <p>Open TypeRacer Pro and start your first session right now — it takes 30 seconds.</p>
+      <a href="https://typeracer-pro-web.vercel.app/#test" class="btn btn-primary btn-lg">
+        Start Typing Practice →
+      </a>
+    </section>
+
+  </main>
+
+  <!-- ══════════════════════════════
+       FOOTER
+  ══════════════════════════════ -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <span aria-hidden="true">⌨️</span>
+            <span>TypeRacer<span class="logo-accent">Pro</span></span>
+          </div>
+          <p class="footer-tagline">Free online typing speed test — no signup, no ads, no tracking.</p>
+        </div>
+        <nav class="footer-nav" aria-label="Footer navigation">
+          <div class="footer-nav-col">
+            <span class="footer-nav-heading">Pages</span>
+            <a href="/">Home</a>
+            <a href="/#test">Typing Test</a>
+            <a href="/#about">About</a>
+            <a href="/#privacy">Privacy Policy</a>
+          </div>
+          <div class="footer-nav-col">
+            <span class="footer-nav-heading">Resources</span>
+            <a href="/typing-speed-test/">Typing Speed Test</a>
+            <a href="/wpm-test/">WPM Test</a>
+            <a href="/typing-practice/">Typing Practice</a>
+          </div>
+          <div class="footer-nav-col">
+            <span class="footer-nav-heading">Test Modes</span>
+            <a href="/#test">30 Second Test</a>
+            <a href="/#test">60 Second Test</a>
+            <a href="/#test">120 Second Test</a>
+          </div>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2026 TypeRacerPro · Free &amp; Open Source · No data collected</p>
+        <div class="footer-bottom-links">
+          <a href="/#privacy">Privacy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ══════════════════════════════
+       INLINE SCRIPT — theme + mobile menu + FAQ
+       (script.js is SPA-only and not loaded here)
+  ══════════════════════════════ -->
+  <script>
+    // ── Theme Toggle ──────────────────────────
+    const $html   = document.documentElement;
+    const $toggle = document.getElementById('theme-toggle');
+    const $icon   = document.getElementById('theme-icon');
+
+    function setTheme(t) {
+      $html.setAttribute('data-theme', t);
+      $icon.textContent = t === 'dark' ? '🌙' : '☀️';
+      localStorage.setItem('typeracer_theme', t);
+    }
+    setTheme(localStorage.getItem('typeracer_theme') || 'dark');
+
+    $toggle.addEventListener('click', () => {
+      setTheme($html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+    });
+
+    // ── Mobile Hamburger ──────────────────────
+    const $hamburger  = document.getElementById('hamburger');
+    const $mobileMenu = document.getElementById('mobile-menu');
+
+    $hamburger.addEventListener('click', () => {
+      const isOpen = $mobileMenu.classList.toggle('open');
+      $hamburger.classList.toggle('open', isOpen);
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!$hamburger.contains(e.target) && !$mobileMenu.contains(e.target)) {
+        $mobileMenu.classList.remove('open');
+        $hamburger.classList.remove('open');
+      }
+    });
+
+    // ── FAQ Accordion ─────────────────────────
+    document.querySelectorAll('.faq-q').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item   = btn.closest('.faq-item');
+        const isOpen = btn.getAttribute('aria-expanded') === 'true';
+
+        document.querySelectorAll('.faq-item').forEach(i => {
+          i.classList.remove('open');
+          i.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
+          i.querySelector('.faq-a').hidden = true;
+        });
+
+        if (!isOpen) {
+          item.classList.add('open');
+          btn.setAttribute('aria-expanded', 'true');
+          item.querySelector('.faq-a').hidden = false;
+        }
+      });
+    });
+  </script>
+</body>
+</html>
