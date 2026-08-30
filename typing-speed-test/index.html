@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ═══ PRIMARY SEO ═══ -->
+  <title>Free Typing Speed Test – Check Your WPM &amp; Accuracy | TypeRacer Pro</title>
+  <meta name="description" content="Take a free online typing speed test with TypeRacer Pro. Measure your WPM, typing accuracy and performance with 30, 60 and 120 second typing tests." />
+  <meta name="author" content="TypeRacer Pro" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <link rel="canonical" href="https://typeracer-pro-web.vercel.app/typing-speed-test/" />
+
+  <!-- ═══ OPEN GRAPH ═══ -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://typeracer-pro-web.vercel.app/typing-speed-test/" />
+  <meta property="og:title"       content="Free Typing Speed Test – Check Your WPM &amp; Accuracy | TypeRacer Pro" />
+  <meta property="og:description" content="Take a free online typing speed test with TypeRacer Pro. Measure your WPM, typing accuracy and performance with 30, 60 and 120 second typing tests." />
+  <meta property="og:site_name"   content="TypeRacer Pro" />
+  <meta property="og:locale"      content="en_US" />
+
+  <!-- ═══ TWITTER CARD ═══ -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:url"         content="https://typeracer-pro-web.vercel.app/typing-speed-test/" />
+  <meta name="twitter:title"       content="Free Typing Speed Test – TypeRacer Pro" />
+  <meta name="twitter:description" content="Measure your WPM and accuracy for free. 30, 60 and 120 second tests. No signup required." />
+
+  <!-- ═══ THEME & APP META ═══ -->
+  <meta name="theme-color" content="#7c6af5" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⌨️</text></svg>" />
+
+  <!-- ═══ SCHEMA.ORG – BreadcrumbList ═══ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://typeracer-pro-web.vercel.app/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Typing Speed Test",
+        "item": "https://typeracer-pro-web.vercel.app/typing-speed-test/"
+      }
+    ]
+  }
+  </script>
+
+  <!-- ═══ SCHEMA.ORG – FAQPage ═══ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is a typing speed test?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A typing speed test measures how quickly and accurately you type a passage of text. It records your Words Per Minute (WPM) and accuracy percentage, giving you an objective snapshot of your current typing ability."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is WPM and how is it calculated?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "WPM stands for Words Per Minute. It is calculated by dividing the total number of correctly typed characters by 5 (treating every 5 characters as one word), then dividing by the time taken in minutes."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is a good typing speed?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The average adult types around 40 WPM. A speed of 50–70 WPM is considered good for most professional tasks. Touch typists and regular keyboard users often reach 70–100 WPM with consistent practice."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does a typing speed test take?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "TypeRacer Pro offers 30-second, 60-second, and 120-second test modes. A 30-second test gives a quick snapshot, while a 120-second test provides a more consistent and reliable measurement of your sustained typing speed."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How can I improve my typing speed?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The most effective methods are: learning touch typing (using all 10 fingers without looking at the keyboard), focusing on accuracy before speed, practicing consistently for 10–15 minutes per day, and using all difficulty levels to challenge yourself progressively."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is TypeRacer Pro free to use?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. TypeRacer Pro is completely free with no account or sign-up required. Your test results are stored only in your browser and never sent to any server."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- ═══ PERFORMANCE ═══ -->
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" />
+</head>
+<body>
+
+  <!-- Animated background blobs -->
+  <div class="bg-blob blob1"></div>
+  <div class="bg-blob blob2"></div>
+  <div class="bg-blob blob3"></div>
+
+  <!-- ══════════════════════════════
+       NAVBAR
+  ══════════════════════════════ -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <!-- Logo -->
+      <a href="/" class="nav-logo" aria-label="TypeRacer Pro Home">
+        <span class="logo-icon">⌨️</span>
+        <span class="logo-text">TypeRacer<span class="logo-accent">Pro</span></span>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <ul class="nav-links" id="nav-links">
+        <li><a class="nav-link" href="/">Home</a></li>
+        <li><a class="nav-link" href="/#test">Test</a></li>
+        <li><a class="nav-link" href="/#about">About</a></li>
+        <li><a class="nav-link" href="/#privacy">Privacy</a></li>
+      </ul>
+
+      <!-- Right side controls -->
+      <div class="nav-controls">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+          <span class="theme-icon" id="theme-icon">🌙</span>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Dropdown -->
+    <div class="mobile-menu" id="mobile-menu">
+      <a class="mobile-link" href="/">Home</a>
+      <a class="mobile-link" href="/#test">Test</a>
+      <a class="mobile-link" href="/#about">About</a>
+      <a class="mobile-link" href="/#privacy">Privacy</a>
+    </div>
+  </nav>
+
+  <!-- ══════════════════════════════
+       MAIN CONTENT
+  ══════════════════════════════ -->
+  <main style="padding-top: var(--nav-h);">
+
+    <!-- ── BREADCRUMB ── -->
+    <nav class="lp-breadcrumb" aria-label="Breadcrumb">
+      <div class="lp-breadcrumb-inner">
+        <ol>
+          <li><a href="/">Home</a></li>
+          <li aria-hidden="true">›</li>
+          <li aria-current="page">Typing Speed Test</li>
+        </ol>
+      </div>
+    </nav>
+
+    <!-- ── HERO ── -->
+    <section class="lp-hero">
+      <div class="lp-hero-inner">
+        <div class="hero-badge">⌨️ Free Online Typing Speed Test</div>
+        <h1 class="hero-title">
+          Free Typing<br/>
+          <span class="gradient-text">Speed Test</span>
+        </h1>
+        <p class="hero-subtitle">
+          Find out how fast you really type. Measure your WPM, accuracy, and streaks
+          with 30, 60, or 120-second tests across three difficulty levels — no signup needed.
+        </p>
+        <div class="hero-actions">
+          <a href="https://typeracer-pro-web.vercel.app/#test" class="btn btn-primary btn-lg">
+            ⚡ Start Typing Test
+          </a>
+          <a href="#what-is-a-typing-speed-test" class="btn btn-outline btn-lg">
+            Learn More ↓
+          </a>
+        </div>
+
+        <!-- Mini Stats -->
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <span class="hero-stat-value">90+</span>
+            <span class="hero-stat-label">Text Passages</span>
+          </div>
+          <div class="hero-stat-divider"></div>
+          <div class="hero-stat">
+            <span class="hero-stat-value">3</span>
+            <span class="hero-stat-label">Time Modes</span>
+          </div>
+          <div class="hero-stat-divider"></div>
+          <div class="hero-stat">
+            <span class="hero-stat-value">100%</span>
+            <span class="hero-stat-label">Free Forever</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Mock Card -->
+      <div class="hero-visual">
+        <div class="mock-card">
+          <div class="mock-stats">
+            <div class="mock-stat"><span class="mock-val">72</span><span class="mock-lbl">WPM</span></div>
+            <div class="mock-stat"><span class="mock-val">98%</span><span class="mock-lbl">Accuracy</span></div>
+            <div class="mock-stat"><span class="mock-val">58s</span><span class="mock-lbl">Time</span></div>
+          </div>
+          <div class="mock-text">
+            <span class="m-correct">The quick brown fox</span>
+            <span class="m-current"> j</span><span class="m-pending">umps over the lazy dog</span>
+          </div>
+          <div class="mock-bar"><div class="mock-fill"></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── FEATURES ── -->
+    <section class="features-section">
+      <h2 class="section-title">What Makes TypeRacer Pro Different?</h2>
+      <p class="section-subtitle">A focused, distraction-free typing test with the feedback you actually need.</p>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">⚡</div>
+          <h3>Live WPM Counter</h3>
+          <p>Your Words Per Minute updates in real time as you type, so you can pace yourself throughout the test.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🎯</div>
+          <h3>Letter-by-Letter Feedback</h3>
+          <p>Every character lights up green for correct and red for incorrect — instant visual feedback on every keystroke.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">⏱️</div>
+          <h3>Three Test Durations</h3>
+          <p>Choose 30s for a quick check, 60s for a standard test, or 120s for a more sustained and reliable measurement.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📊</div>
+          <h3>Score History</h3>
+          <p>Your last 10 results are saved locally so you can track your improvement over time without creating an account.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🏆</div>
+          <h3>Typing Rating</h3>
+          <p>Each test ends with a rating — from Beginner to Expert — so you always know where you stand.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🌙</div>
+          <h3>Dark &amp; Light Mode</h3>
+          <p>Switch between themes for comfortable typing at any hour. Your preference is remembered between sessions.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── GUIDE CONTENT ── -->
+    <section class="features-section" style="padding-top: 0;" id="what-is-a-typing-speed-test">
+      <h2 class="section-title">Everything You Need to Know</h2>
+      <p class="section-subtitle">A practical guide to typing speed, WPM, accuracy, and how to improve.</p>
+
+      <div class="seo-guide-grid">
+
+        <!-- What Is a Typing Speed Test -->
+        <article class="feature-card seo-card" aria-labelledby="tst-what">
+          <div class="feature-icon">📋</div>
+          <h2 id="tst-what">What Is a Typing Speed Test?</h2>
+          <p>A typing speed test presents you with a passage of text and asks you to type it as accurately and quickly as possible within a set time. When time is up, it calculates two scores: your <strong>Words Per Minute (WPM)</strong> and your <strong>accuracy percentage</strong>.</p>
+          <p>These two numbers together tell you far more than either does alone. A high WPM with poor accuracy isn't productive — errors cost time in real work. A low WPM with near-perfect accuracy signals that technique is sound and speed will come with practice.</p>
+        </article>
+
+        <!-- How WPM Works -->
+        <article class="feature-card seo-card" aria-labelledby="tst-wpm">
+          <div class="feature-icon">📐</div>
+          <h2 id="tst-wpm">How WPM Is Calculated</h2>
+          <p>WPM doesn't count individual words — it normalises for word length. The standard method treats every <strong>5 characters</strong> (including spaces and punctuation) as one "word." This makes results comparable across different texts and typists.</p>
+          <p>The formula is: <strong>(Correct characters ÷ 5) ÷ minutes elapsed</strong>. So if you type 360 correct characters in 60 seconds, your WPM is (360 ÷ 5) ÷ 1 = <strong>72 WPM</strong>. TypeRacer Pro calculates this continuously so you can watch your rate in real time.</p>
+        </article>
+
+        <!-- What Is a Good Speed -->
+        <article class="feature-card seo-card" aria-labelledby="tst-good">
+          <div class="feature-icon">📊</div>
+          <h2 id="tst-good">What Is a Good Typing Speed?</h2>
+          <p>Typing speed varies significantly by age, profession, and how much someone uses a keyboard day to day. A useful reference:</p>
+          <ul class="tips-list">
+            <li><strong>Under 30 WPM</strong> — below average; focused practice will help quickly</li>
+            <li><strong>30–50 WPM</strong> — around the general adult average</li>
+            <li><strong>50–70 WPM</strong> — good; comfortable for most professional tasks</li>
+            <li><strong>70–100 WPM</strong> — fast; typical of experienced touch typists</li>
+            <li><strong>100+ WPM</strong> — very fast; the result of years of deliberate practice</li>
+          </ul>
+          <p>There's no single "correct" target. Focus on whether your speed meets your own needs and whether it's improving over time.</p>
+        </article>
+
+        <!-- Test Duration -->
+        <article class="feature-card seo-card" aria-labelledby="tst-duration">
+          <div class="feature-icon">⏳</div>
+          <h2 id="tst-duration">Which Test Duration Should You Choose?</h2>
+          <p>Test length affects your result more than most people expect:</p>
+          <ul class="tips-list">
+            <li><strong>30 seconds</strong> — captures your burst speed. Results can be higher than your sustained rate but are useful for quick checks.</li>
+            <li><strong>60 seconds</strong> — the most widely used standard. Balances speed and consistency well.</li>
+            <li><strong>120 seconds</strong> — the most reliable measurement. Any fatigue or inconsistency in technique shows up here.</li>
+          </ul>
+          <p>For tracking genuine improvement over time, the 60s or 120s test gives the most honest picture.</p>
+        </article>
+
+        <!-- How to Improve -->
+        <article class="feature-card seo-card" aria-labelledby="tst-improve">
+          <div class="feature-icon">🚀</div>
+          <h2 id="tst-improve">How to Improve Your Typing Speed</h2>
+          <p>Speed improves fastest when you build the right habits first:</p>
+          <ul class="tips-list">
+            <li><strong>Learn touch typing</strong> — assign each finger to its designated keys using home-row positioning (left: ASDF, right: JKL;). Never looking at the keyboard is the single biggest long-term improvement lever.</li>
+            <li><strong>Accuracy before speed</strong> — forcing yourself to go faster than your accuracy allows just reinforces bad habits. Aim for 95%+ accuracy and let speed follow naturally.</li>
+            <li><strong>Short daily sessions</strong> — 10 to 15 minutes every day beats a single long session once a week.</li>
+            <li><strong>Progress through difficulty levels</strong> — start on Easy, move to Medium when accuracy is stable, then take on Hard.</li>
+            <li><strong>Track your weak spots</strong> — notice which characters or combinations you consistently mistype and drill those specifically.</li>
+          </ul>
+        </article>
+
+        <!-- Why Accuracy Matters -->
+        <article class="feature-card seo-card" aria-labelledby="tst-accuracy">
+          <div class="feature-icon">🎯</div>
+          <h2 id="tst-accuracy">Why Accuracy Matters More Than Speed</h2>
+          <p>Every error you make mid-typing costs more time than you saved going fast: you have to stop, backspace, and retype. At 60 WPM with 88% accuracy, your effective throughput is lower than typing at 48 WPM with 99% accuracy.</p>
+          <p>Beyond raw efficiency, accuracy matters in context. A typo in code can introduce a hard-to-find bug. An error in a professional email affects how you're perceived. Building an accurate foundation first means your speed improvements are immediately useful — not just impressive on a test.</p>
+        </article>
+
+        <!-- Interpreting Your Results -->
+        <article class="feature-card seo-card" aria-labelledby="tst-results">
+          <div class="feature-icon">🏆</div>
+          <h2 id="tst-results">How to Interpret Your Results</h2>
+          <p>TypeRacer Pro gives you a rating after each test based on your WPM:</p>
+          <ul class="tips-list">
+            <li><strong>Beginner (0–19 WPM)</strong> — just getting started; every session will show improvement</li>
+            <li><strong>Average (20–34 WPM)</strong> — room to grow; consistent practice will move you up quickly</li>
+            <li><strong>Good (35–49 WPM)</strong> — slightly above average; solid foundation to build on</li>
+            <li><strong>Fast (50–69 WPM)</strong> — well above average; touch typing habits are likely in place</li>
+            <li><strong>Professional (70–99 WPM)</strong> — faster than most office workers; strong and consistent</li>
+            <li><strong>Expert (100+ WPM)</strong> — top-tier speed; the result of years of deliberate practice</li>
+          </ul>
+          <p>Don't compare a 30s score to a 120s score — use the same duration to track improvement accurately.</p>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ── MID-PAGE CTA ── -->
+    <section class="cta-section">
+      <h2>Ready to find out your WPM?</h2>
+      <p>Take a free typing speed test right now — no account, no ads, no tracking.</p>
+      <a href="https://typeracer-pro-web.vercel.app/#test" class="btn btn-primary btn-lg">
+        ⚡ Start Your Free Typing Test
+      </a>
+    </section>
+
+    <!-- ── FAQ ── -->
+    <section class="faq-section" id="faq" aria-labelledby="faq-heading">
+      <div class="faq-inner">
+        <h2 class="section-title" id="faq-heading">Frequently Asked Questions</h2>
+        <p class="section-subtitle">Common questions about typing speed tests and WPM.</p>
+        <div class="faq-list">
+
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">
+              <span>What is a typing speed test?</span>
+              <span class="faq-arrow">▾</span>
+            </button>
+            <div class="faq-a" hidden>
+              <p>A typing speed test measures how quickly and accurately you can type a given passage. It records your <strong>Words Per Minute (WPM)</strong> and <strong>accuracy percentage</strong> — the two core metrics for evaluating typing ability.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">
+              <span>What is WPM and how is it calculated?</span>
+              <span class="faq-arrow">▾</span>
+            </button>
+            <div class="faq-a" hidden>
+              <p>WPM stands for <strong>Words Per Minute</strong>. It treats every 5 characters as one word, then divides by elapsed minutes. For example, 300 correctly typed characters in 60 seconds = <strong>60 WPM</strong>.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">
+              <span>What is a good typing speed in WPM?</span>
+              <span class="faq-arrow">▾</span>
+            </button>
+            <div class="faq-a" hidden>
+              <p>The average adult types around <strong>40 WPM</strong>. A speed of 50–70 WPM is considered good for professional use. Touch typists and experienced users often reach 70–100 WPM with regular practice.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">
+              <span>How long does a typing speed test take?</span>
+              <span class="faq-arrow">▾</span>
+            </button>
+            <div class="faq-a" hidden>
+              <p>TypeRacer Pro offers <strong>30, 60, and 120-second</strong> modes. A 30-second test takes under a minute. The 120-second test gives the most consistent and reliable result.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">
+              <span>How can I improve my typing speed?</span>
+              <span class="faq-arrow">▾</span>
+            </button>
+            <div class="faq-a" hidden>
+              <p>The most effective approaches: learn <strong>touch typing</strong> (all 10 fingers, not looking at the keyboard), prioritise <strong>accuracy over speed</strong> first, practise for 10–15 minutes daily, and gradually increase difficulty level.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">
+              <span>Does TypeRacer Pro store any personal data?</span>
+              <span class="faq-arrow">▾</span>
+            </button>
+            <div class="faq-a" hidden>
+              <p>No. Your test history is stored only in your <strong>browser's localStorage</strong> — nothing is sent to any server. No account, no tracking, no cookies.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── FINAL CTA ── -->
+    <section class="cta-section">
+      <h2>Start improving your typing today.</h2>
+      <p>Free, instant, and no sign-up required. Your first test takes 30 seconds.</p>
+      <a href="https://typeracer-pro-web.vercel.app/#test" class="btn btn-primary btn-lg">
+        Take the Typing Speed Test →
+      </a>
+    </section>
+
+  </main>
+
+  <!-- ══════════════════════════════
+       FOOTER
+  ══════════════════════════════ -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <span aria-hidden="true">⌨️</span>
+            <span>TypeRacer<span class="logo-accent">Pro</span></span>
+          </div>
+          <p class="footer-tagline">Free online typing speed test — no signup, no ads, no tracking.</p>
+        </div>
+        <nav class="footer-nav" aria-label="Footer navigation">
+          <div class="footer-nav-col">
+            <span class="footer-nav-heading">Pages</span>
+            <a href="/">Home</a>
+            <a href="/#test">Typing Test</a>
+            <a href="/#about">About</a>
+            <a href="/#privacy">Privacy Policy</a>
+          </div>
+          <div class="footer-nav-col">
+            <span class="footer-nav-heading">Test Modes</span>
+            <a href="/#test">30 Second Test</a>
+            <a href="/#test">60 Second Test</a>
+            <a href="/#test">120 Second Test</a>
+          </div>
+          <div class="footer-nav-col">
+            <span class="footer-nav-heading">Difficulty</span>
+            <a href="/#test">Easy WPM Test</a>
+            <a href="/#test">Medium WPM Test</a>
+            <a href="/#test">Hard WPM Test</a>
+          </div>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2026 TypeRacerPro · Free &amp; Open Source · No data collected</p>
+        <div class="footer-bottom-links">
+          <a href="/#privacy">Privacy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ══════════════════════════════
+       INLINE SCRIPT — theme + FAQ only
+       (does not load script.js which is
+        tightly coupled to the SPA DOM)
+  ══════════════════════════════ -->
+  <script>
+    // ── Theme Toggle ──────────────────────────
+    const $html   = document.documentElement;
+    const $toggle = document.getElementById('theme-toggle');
+    const $icon   = document.getElementById('theme-icon');
+
+    function setTheme(t) {
+      $html.setAttribute('data-theme', t);
+      $icon.textContent = t === 'dark' ? '🌙' : '☀️';
+      localStorage.setItem('typeracer_theme', t);
+    }
+    setTheme(localStorage.getItem('typeracer_theme') || 'dark');
+
+    $toggle.addEventListener('click', () => {
+      setTheme($html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+    });
+
+    // ── Mobile Hamburger ──────────────────────
+    const $hamburger  = document.getElementById('hamburger');
+    const $mobileMenu = document.getElementById('mobile-menu');
+
+    $hamburger.addEventListener('click', () => {
+      const isOpen = $mobileMenu.classList.toggle('open');
+      $hamburger.classList.toggle('open', isOpen);
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!$hamburger.contains(e.target) && !$mobileMenu.contains(e.target)) {
+        $mobileMenu.classList.remove('open');
+        $hamburger.classList.remove('open');
+      }
+    });
+
+    // ── FAQ Accordion ─────────────────────────
+    document.querySelectorAll('.faq-q').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item   = btn.closest('.faq-item');
+        const isOpen = btn.getAttribute('aria-expanded') === 'true';
+
+        // Close all
+        document.querySelectorAll('.faq-item').forEach(i => {
+          i.classList.remove('open');
+          i.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
+          i.querySelector('.faq-a').hidden = true;
+        });
+
+        // Open clicked (unless it was already open)
+        if (!isOpen) {
+          item.classList.add('open');
+          btn.setAttribute('aria-expanded', 'true');
+          item.querySelector('.faq-a').hidden = false;
+        }
+      });
+    });
+  </script>
+</body>
+</html>
