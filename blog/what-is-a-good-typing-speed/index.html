@@ -225,6 +225,9 @@
       transition: border-color var(--transition), color var(--transition);
     }
     .article-body a:hover { color: var(--accent); border-color: var(--accent); }
+    /* Buttons inside article body must not inherit link colour */
+    .article-body .btn { color: #fff; border-bottom: none; }
+    .article-body .btn:hover { color: #fff; border-bottom: none; }
     .article-body strong { color: var(--text-primary); }
     .callout {
       background: rgba(124,106,245,0.08);
