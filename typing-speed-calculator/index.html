@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ═══ PRIMARY SEO ═══ -->
+  <title>Typing Speed Calculator – Calculate Your WPM | TypeRacer Pro</title>
+  <meta name="description" content="Use the free typing speed calculator to understand your WPM, words per minute and typing performance." />
+  <meta name="author" content="TypeRacer Pro" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <link rel="canonical" href="https://typeracer-pro-web.vercel.app/typing-speed-calculator/" />
+
+  <!-- ═══ OPEN GRAPH ═══ -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://typeracer-pro-web.vercel.app/typing-speed-calculator/" />
+  <meta property="og:title"       content="Typing Speed Calculator – Calculate Your WPM | TypeRacer Pro" />
+  <meta property="og:description" content="Use the free typing speed calculator to understand your WPM, words per minute and typing performance." />
+  <meta property="og:site_name"   content="TypeRacer Pro" />
+  <meta property="og:locale"      content="en_US" />
+
+  <!-- ═══ TWITTER CARD ═══ -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:url"         content="https://typeracer-pro-web.vercel.app/typing-speed-calculator/" />
+  <meta name="twitter:title"       content="Typing Speed Calculator – TypeRacer Pro" />
+  <meta name="twitter:description" content="Calculate your WPM from characters typed, time elapsed and error count. Free, instant, no signup." />
+
+  <!-- ═══ THEME & APP META ═══ -->
+  <meta name="theme-color" content="#7c6af5" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⌨️</text></svg>" />
+
+  <!-- ═══ SCHEMA.ORG – BreadcrumbList ═══ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://typeracer-pro-web.vercel.app/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Typing Speed Calculator",
+        "item": "https://typeracer-pro-web.vercel.app/typing-speed-calculator/"
+      }
+    ]
+  }
+  </script>
+
+  <!-- ═══ SCHEMA.ORG – FAQPage ═══ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is the WPM formula?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "WPM = (Total characters typed ÷ 5) ÷ minutes elapsed. Every 5 characters — including spaces — counts as one normalised word. Only correctly typed characters are counted; errors are tracked separately as accuracy."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between a WPM calculator and a typing test?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A WPM calculator lets you input numbers you already have — characters typed, time, and errors — and converts them into a WPM and accuracy figure. A typing test like TypeRacer Pro measures those numbers live while you type, giving you a real-time score under actual conditions."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does WPM include errors?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "In the standard definition, WPM is calculated from correctly typed characters only. Errors are factored into accuracy separately. This calculator deducts error characters from the total before computing WPM, matching how most typing tests work."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is a good WPM score?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The average adult types around 40 WPM. A score of 50–70 WPM is considered good for most professional tasks. Regular touch typists typically reach 70–100 WPM with consistent practice."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why does this calculator use characters instead of words?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Word lengths vary widely, so counting actual words would make scores inconsistent across different texts. The industry standard treats every 5 characters as one word, ensuring comparable results regardless of what was typed."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- ═══ PERFORMANCE ═══ -->
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" />
+
+  <style>
+    /* ── Calculator widget styles (scoped to this page only) ── */
+    .calc-widget {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2rem;
+      max-width: 620px;
+      margin: 0 auto 2rem;
+    }
+    .calc-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+    @media (max-width: 520px) { .calc-grid { grid-template-columns: 1fr; } }
+
+    .calc-field { display: flex; flex-direction: column; gap: 0.4rem; }
+    .calc-label {
+      font-size: 0.78rem; font-weight: 700;
+      color: var(--text-secondary); text-transform: uppercase;
+      letter-spacing: 0.07em;
+    }
+    .calc-hint { font-size: 0.72rem; color: var(--text-muted); }
+    .calc-input {
+      width: 100%; padding: 0.65rem 0.9rem;
+      background: var(--surface2); border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      color: var(--text-primary);
+      font-family: 'Inter', sans-serif; font-size: 0.95rem;
+      transition: border-color var(--transition), box-shadow var(--transition);
+      appearance: none; -webkit-appearance: none;
+    }
+    .calc-input:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px var(--accent-glow);
+    }
+    .calc-input::placeholder { color: var(--text-muted); }
+    /* Remove browser number spinners */
+    .calc-input::-webkit-outer-spin-button,
+    .calc-input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+    .calc-input[type=number] { -moz-appearance: textfield; }
+
+    .calc-actions {
+      display: flex; gap: 0.75rem; flex-wrap: wrap;
+      margin-bottom: 1.5rem;
+    }
+    .calc-btn-reset {
+      background: transparent; border: 1px solid var(--border);
+      color: var(--text-muted); border-radius: 50px;
+      padding: 0.65rem 1.4rem; font-family: 'Inter', sans-serif;
+      font-size: 0.875rem; font-weight: 600; cursor: pointer;
+      transition: all var(--transition);
+    }
+    .calc-btn-reset:hover { border-color: var(--accent); color: var(--text-primary); }
+
+    /* Results panel */
+    .calc-results {
+      border-top: 1px solid var(--border);
+      padding-top: 1.5rem;
+      display: none; /* shown by JS after calculation */
+    }
+    .calc-results.visible { display: block; }
+    .calc-results-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 1rem; margin-bottom: 1rem;
+    }
+    @media (max-width: 420px) { .calc-results-grid { grid-template-columns: 1fr 1fr; } }
+    .calc-result-card {
+      background: var(--surface2); border: 1px solid var(--border);
+      border-radius: var(--radius-sm); padding: 1rem;
+      text-align: center;
+      transition: border-color var(--transition);
+    }
+    .calc-result-card.highlight { border-color: var(--accent); }
+    .calc-result-val {
+      display: block; font-size: 1.8rem; font-weight: 800;
+      color: var(--accent2); line-height: 1.1; margin-bottom: 0.25rem;
+    }
+    .calc-result-card.highlight .calc-result-val { color: var(--accent2); }
+    .calc-result-lbl {
+      font-size: 0.72rem; color: var(--text-muted);
+      text-transform: uppercase; letter-spacing: 0.07em;
+    }
+    .calc-rating {
+      display: flex; align-items: center; gap: 0.75rem;
+      background: rgba(124,106,245,0.1); border: 1px solid rgba(124,106,245,0.3);
+      border-radius: var(--radius-sm); padding: 0.75rem 1rem;
+      font-size: 0.875rem;
+    }
+    .calc-rating-badge {
+      font-weight: 700; color: var(--accent2); white-space: nowrap;
+    }
+    .calc-rating-msg { color: var(--text-secondary); }
+    .calc-error-msg {
+      color: var(--red); font-size: 0.875rem;
+      background: rgba(248,113,113,0.1); border: 1px solid rgba(248,113,113,0.25);
+      border-radius: var(--radius-sm); padding: 0.65rem 1rem;
+      display: none;
+    }
+    .calc-error-msg.visible { display: block; }
+
+    /* Formula callout */
+    .formula-box {
+      background: var(--surface2); border: 1px solid var(--border);
+      border-radius: var(--radius-sm); padding: 0.85rem 1.1rem;
+      font-size: 0.875rem; line-height: 1.6;
+      margin: 0.75rem 0;
+    }
+    .formula-box strong { color: var(--text-primary); }
+
+    /* Examples table */
+    .examples-table {
+      width: 100%; border-collapse: collapse;
+      font-size: 0.85rem; margin-top: 0.75rem;
+    }
+    .examples-table th {
+      text-align: left; padding: 0.5rem 0.75rem;
+      font-size: 0.72rem; font-weight: 700;
+      color: var(--text-secondary); text-transform: uppercase;
+      letter-spacing: 0.07em; border-bottom: 1px solid var(--border);
+    }
+    .examples-table td {
+      padding: 0.55rem 0.75rem; color: var(--text-secondary);
+      border-bottom: 1px solid var(--border);
+    }
+    .examples-table tr:last-child td { border-bottom: none; }
+    .examples-table td:first-child { color: var(--text-primary); font-weight: 600; }
+    .examples-table td strong { color: var(--accent2); }
+  </style>
+</head>
+<body>
+
+  <!-- Animated background blobs -->
+  <div class="bg-blob blob1"></div>
+  <div class="bg-blob blob2"></div>
+  <div class="bg-blob blob3"></div>
+
+  <!-- ══════════════════════════════
+       NAVBAR
+  ══════════════════════════════ -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo" aria-label="TypeRacer Pro Home">
+        <span class="logo-icon">⌨️</span>
+        <span class="logo-text">TypeRacer<span class="logo-accent">Pro</span></span>
+      </a>
+      <ul class="nav-links" id="nav-links">
+        <li><a class="nav-link" href="/">Home</a></li>
+        <li><a class="nav-link" href="/#test">Test</a></li>
+        <li><a class="nav-link" href="/#about">About</a></li>
+        <li><a class="nav-link" href="/#privacy">Privacy</a></li>
+      </ul>
+      <div class="nav-controls">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+          <span class="theme-icon" id="theme-icon">🌙</span>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="mobile-menu" id="mobile-menu">
+      <a class="mobile-link" href="/">Home</a>
+      <a class="mobile-link" href="/#test">Test</a>
+      <a class="mobile-link" href="/#about">About</a>
+      <a class="mobile-link" href="/#privacy">Privacy</a>
+    </div>
+  </nav>
+
+  <!-- ══════════════════════════════
+       MAIN CONTENT
+  ══════════════════════════════ -->
+  <main style="padding-top: var(--nav-h);">
+
+    <!-- ── BREADCRUMB ── -->
+    <nav class="lp-breadcrumb" aria-label="Breadcrumb">
+      <div class="lp-breadcrumb-inner">
+        <ol>
+          <li><a href="/">Home</a></li>
+          <li aria-hidden="true">›</li>
+          <li aria-current="page">Typing Speed Calculator</li>
+        </ol>
+      </div>
+    </nav>
+
+    <!-- ── HERO ── -->
+    <section class="lp-hero">
+      <div class="lp-hero-inner">
+        <div class="hero-badge">🔢 Free WPM Calculator</div>
+        <h1 class="hero-title">
+          Typing Speed<br/>
+          <span class="gradient-text">Calculator</span>
+        </h1>
+        <p class="hero-subtitle">
+          Enter your characters typed, time elapsed, and optional error count —
+          and get your WPM, accuracy, and rating instantly.
+          No signup, no tracking.
+        </p>
+        <div class="hero-actions">
+          <a href="#calculator" class="btn btn-primary btn-lg">
+            🔢 Use the Calculator ↓
+          </a>
+          <a href="https://typeracer-pro-web.vercel.app/#test" class="btn btn-outline btn-lg">
+            ⚡ Take a Live Test
+          </a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="mock-card">
+          <div class="mock-stats">
+            <div class="mock-stat"><span class="mock-val">68</span><span class="mock-lbl">WPM</span></div>
+            <div class="mock-stat"><span class="mock-val">96%</span><span class="mock-lbl">Accuracy</span></div>
+            <div class="mock-stat"><span class="mock-val">60s</span><span class="mock-lbl">Time</span></div>
+          </div>
+          <div class="mock-text">
+            <span class="m-correct">340 chars ÷ 5</span>
+            <span class="m-current"> ÷</span><span class="m-pending"> 1 min = 68 WPM</span>
+          </div>
+          <div class="mock-bar"><div class="mock-fill" style="width:68%"></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════
+         CALCULATOR WIDGET
+    ══════════════════════════════ -->
+    <section class="features-section" id="calculator" style="padding-top:0; padding-bottom:2rem;">
+      <h2 class="section-title">WPM Calculator</h2>
+      <p class="section-subtitle">Fill in what you know — errors are optional.</p>
+
+      <div class="calc-widget" role="form" aria-label="WPM Calculator">
+
+        <div class="calc-grid">
+
+          <!-- Characters typed -->
+          <div class="calc-field">
+            <label class="calc-label" for="calc-chars">Characters Typed</label>
+            <span class="calc-hint">Total keystrokes including spaces</span>
+            <input
+              class="calc-input" type="number" id="calc-chars"
+              min="1" max="99999" placeholder="e.g. 320"
+              aria-describedby="calc-chars-hint"
+            />
+          </div>
+
+          <!-- Time -->
+          <div class="calc-field">
+            <label class="calc-label" for="calc-seconds">Time Elapsed (seconds)</label>
+            <span class="calc-hint">Duration of your typing session</span>
+            <input
+              class="calc-input" type="number" id="calc-seconds"
+              min="1" max="7200" placeholder="e.g. 60"
+              aria-describedby="calc-seconds-hint"
+            />
+          </div>
+
+          <!-- Errors -->
+          <div class="calc-field">
+            <label class="calc-label" for="calc-errors">Errors <span style="font-weight:400;text-transform:none;letter-spacing:0;">(optional)</span></label>
+            <span class="calc-hint">Characters typed incorrectly</span>
+            <input
+              class="calc-input" type="number" id="calc-errors"
+              min="0" max="99999" placeholder="e.g. 8"
+              aria-describedby="calc-errors-hint"
+            />
+          </div>
+
+          <!-- Mode selector -->
+          <div class="calc-field">
+            <label class="calc-label" for="calc-mode">Input Mode</label>
+            <span class="calc-hint">Choose what you're entering</span>
+            <select class="calc-input" id="calc-mode" aria-label="Input mode">
+              <option value="chars">Characters (standard)</option>
+              <option value="words">Actual word count</option>
+            </select>
+          </div>
+
+        </div>
+
+        <!-- Error message -->
+        <div class="calc-error-msg" id="calc-error" role="alert" aria-live="polite"></div>
+
+        <!-- Actions -->
+        <div class="calc-actions">
+          <button class="btn btn-primary" id="calc-btn">Calculate WPM</button>
+          <button class="calc-btn-reset" id="calc-reset">Reset</button>
+        </div>
+
+        <!-- Results -->
+        <div class="calc-results" id="calc-results" aria-live="polite">
+          <div class="calc-results-grid">
+            <div class="calc-result-card highlight">
+              <span class="calc-result-val" id="res-wpm">—</span>
+              <span class="calc-result-lbl">WPM</span>
+            </div>
+            <div class="calc-result-card">
+              <span class="calc-result-val" id="res-accuracy">—</span>
+              <span class="calc-result-lbl">Accuracy</span>
+            </div>
+            <div class="calc-result-card">
+              <span class="calc-result-val" id="res-cpm">—</span>
+              <span class="calc-result-lbl">CPM</span>
+            </div>
+          </div>
+          <div class="calc-rating" id="calc-rating-row">
+            <span class="calc-rating-badge" id="res-rating">—</span>
+            <span class="calc-rating-msg" id="res-msg">—</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CONTENT GUIDE ── -->
+    <section class="features-section" style="padding-top:0;" id="wpm-explained">
+      <h2 class="section-title">WPM Explained</h2>
+      <p class="section-subtitle">What the numbers mean and how the formula works.</p>
+
+      <div class="seo-guide-grid">
+
+        <!-- What WPM means -->
+        <article class="feature-card seo-card" aria-labelledby="calc-what">
+          <div class="feature-icon">📏</div>
+          <h2 id="calc-what">What Is WPM?</h2>
+          <p><strong>WPM stands for Words Per Minute</strong> — the standard unit for measuring typing speed. It doesn't count actual words (which vary in length). Instead, it treats every <strong>5 characters — including spaces and punctuation — as one normalised word</strong>.</p>
+          <p>This convention makes scores comparable across different texts. A test with lots of short words and a test with long technical words both produce fair, consistent WPM figures under this definition.</p>
+        </article>
+
+        <!-- How WPM is calculated -->
+        <article class="feature-card seo-card" aria-labelledby="calc-formula">
+          <div class="feature-icon">🔢</div>
+          <h2 id="calc-formula">The WPM Formula</h2>
+          <p>The formula this calculator uses:</p>
+          <div class="formula-box">
+            <strong>Correct characters</strong> = Total characters − Errors<br/>
+            <strong>WPM</strong> = (Correct characters ÷ 5) ÷ (Seconds ÷ 60)<br/>
+            <strong>Accuracy</strong> = (Correct characters ÷ Total characters) × 100
+          </div>
+          <p>If you choose "Actual word count" mode, the calculator uses your word count directly divided by minutes, skipping the ÷5 normalisation step.</p>
+        </article>
+
+        <!-- Worked examples -->
+        <article class="feature-card seo-card" aria-labelledby="calc-examples">
+          <div class="feature-icon">📋</div>
+          <h2 id="calc-examples">Worked Examples</h2>
+          <p>Here's how different inputs translate into WPM scores:</p>
+          <table class="examples-table" aria-label="WPM calculation examples">
+            <thead>
+              <tr>
+                <th>Scenario</th>
+                <th>Characters</th>
+                <th>Time</th>
+                <th>Errors</th>
+                <th>WPM</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Beginner</td>
+                <td>150</td>
+                <td>60s</td>
+                <td>5</td>
+                <td><strong>29</strong></td>
+              </tr>
+              <tr>
+                <td>Average</td>
+                <td>210</td>
+                <td>60s</td>
+                <td>8</td>
+                <td><strong>40</strong></td>
+              </tr>
+              <tr>
+                <td>Good</td>
+                <td>320</td>
+                <td>60s</td>
+                <td>6</td>
+                <td><strong>62</strong></td>
+              </tr>
+              <tr>
+                <td>Fast</td>
+                <td>450</td>
+                <td>60s</td>
+                <td>10</td>
+                <td><strong>88</strong></td>
+              </tr>
+              <tr>
+                <td>Expert</td>
+                <td>540</td>
+                <td>60s</td>
+                <td>5</td>
+                <td><strong>107</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </article>
+
+        <!-- Calculator vs live test -->
+        <article class="feature-card seo-card" aria-labelledby="calc-vs-test">
+          <div class="feature-icon">⚖️</div>
+          <h2 id="calc-vs-test">Calculator vs Live Typing Test</h2>
+          <p>Both tools answer the same underlying question — "how fast do I type?" — but in different ways:</p>
+          <ul class="tips-list">
+            <li><strong>This calculator</strong> — takes numbers you already have and converts them to WPM. Useful for understanding results from paper-based tests, other sources, or hypothetical scenarios.</li>
+            <li><strong>A live typing test</strong> — measures your actual typing in real time under real conditions. It captures your genuine speed, accuracy, and consistency, including hesitation and correction behaviour that a manual calculation can't capture.</li>
+          </ul>
+          <p>For the most accurate and honest picture of your typing ability, a <a href="https://typeracer-pro-web.vercel.app/#test" style="color:var(--accent2);text-decoration:none;">live typing test</a> is the better choice. This calculator is most useful for understanding the maths behind a score or working through examples.</p>
+        </article>
+
+        <!-- WPM ranges -->
+        <article class="feature-card seo-card" aria-labelledby="calc-ranges">
+          <div class="feature-icon">📊</div>
+          <h2 id="calc-ranges">What Your WPM Score Means</h2>
+          <p>Once you have your WPM figure, here's how to contextualise it:</p>
+          <ul class="tips-list">
+            <li><strong>Under 30 WPM</strong> — below the general adult average; consistent practice will produce quick gains at this stage</li>
+            <li><strong>30–50 WPM</strong> — around average for everyday keyboard users; functional for most tasks</li>
+            <li><strong>50–70 WPM</strong> — good; above average and comfortable for professional work</li>
+            <li><strong>70–100 WPM</strong> — fast; typical of regular touch typists</li>
+            <li><strong>100+ WPM</strong> — very fast; the result of deliberate long-term practice</li>
+          </ul>
+          <p>Accuracy matters alongside WPM. A score of 60 WPM at 99% accuracy represents better real-world output than 70 WPM at 85% accuracy, because errors require backspacing and retyping.</p>
+        </article>
+
+        <!-- Accuracy -->
+        <article class="feature-card seo-card" aria-labelledby="calc-accuracy">
+          <div class="feature-icon">🎯</div>
+          <h2 id="calc-accuracy">Why Accuracy Is Part of the Calculation</h2>
+          <p>Raw character count overstates your speed if errors are included. The standard approach — and what this calculator uses — is to <strong>subtract error characters before computing WPM</strong>. Errors are then reported separately as an accuracy percentage.</p>
+          <p>This matters practically: if you type 400 characters in 60 seconds but 60 of them were errors, your effective output is 340 correct characters = 68 WPM, not 80 WPM. The accuracy figure (85%) tells the rest of the story. Together, WPM and accuracy give a complete picture of your typing performance.</p>
+          <p>As a general guide, aim for <strong>95% or higher accuracy</strong> at any WPM level. Below 90%, the speed gains from typing faster are largely cancelled by the time lost to corrections.</p>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ── CTA ── -->
+    <section class="cta-section">
+      <h2>Want to measure your real typing speed?</h2>
+      <p>The calculator works from numbers you already have. For a live measurement under real conditions, take the typing test.</p>
+      <a href="https://typeracer-pro-web.vercel.app/#test" class="btn btn-primary btn-lg">
+        ⚡ Take the Free Typing Test
+      </a>
+    </section>
+
+    <!-- ── FAQ ── -->
+    <section class="faq-section" id="faq" aria-labelledby="faq-heading">
+      <div class="faq-inner">
+        <h2 class="section-title" id="faq-heading">Frequently Asked Questions</h2>
+        <p class="section-subtitle">Common questions about the WPM formula and this calculator.</p>
+        <div class="faq-list">
+
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">
+              <span>What is the WPM formula?</span>
+              <span class="faq-arrow">▾</span>
+            </button>
+            <div class="faq-a" hidden>
+              <p><strong>WPM = (Correct characters ÷ 5) ÷ minutes elapsed.</strong> Every 5 characters counts as one normalised word. Errors are subtracted from the character count before calculating, and tracked separately as accuracy.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">
+              <span>What is the difference between a WPM calculator and a typing test?</span>
+              <span class="faq-arrow">▾</span>
+            </button>
+            <div class="faq-a" hidden>
+              <p>A <strong>WPM calculator</strong> converts numbers you already have into a WPM score. A <strong>live typing test</strong> measures your actual typing in real time, capturing genuine speed, accuracy, and consistency. For the most accurate result, use a <a href="https://typeracer-pro-web.vercel.app/#test" style="color:var(--accent2);text-decoration:none;">live test</a>.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">
+              <span>Does WPM include errors?</span>
+              <span class="faq-arrow">▾</span>
+            </button>
+            <div class="faq-a" hidden>
+              <p>No. The standard WPM definition uses <strong>correctly typed characters only</strong>. This calculator deducts your error count from total characters before computing WPM. Errors are shown separately as your accuracy percentage.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">
+              <span>What is a good WPM score?</span>
+              <span class="faq-arrow">▾</span>
+            </button>
+            <div class="faq-a" hidden>
+              <p>The average adult types around <strong>40 WPM</strong>. A score of 50–70 WPM is considered good for professional tasks. Regular touch typists typically reach 70–100 WPM. See the <a href="/typing-speed-test/" style="color:var(--accent2);text-decoration:none;">typing speed test guide</a> for a full breakdown.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">
+              <span>Why does this calculator use characters instead of words?</span>
+              <span class="faq-arrow">▾</span>
+            </button>
+            <div class="faq-a" hidden>
+              <p>Word lengths vary, making raw word counts inconsistent across different texts. The <strong>5-character convention</strong> normalises for word length, ensuring scores are comparable regardless of what was typed. You can also switch to "Actual word count" mode if you prefer to enter words directly.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── INTERNAL LINKS ── -->
+    <section class="features-section" style="padding-bottom:3rem;padding-top:2rem;">
+      <h2 class="section-title">Related Pages</h2>
+      <p class="section-subtitle">More typing resources from TypeRacer Pro.</p>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">⌨️</div>
+          <h3><a href="/typing-speed-test/" style="color:inherit;text-decoration:none;">Typing Speed Test Guide</a></h3>
+          <p>How typing speed tests work, what results mean, and how to improve your score. <a href="/typing-speed-test/" style="color:var(--accent2);text-decoration:none;">Read more →</a></p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📏</div>
+          <h3><a href="/wpm-test/" style="color:inherit;text-decoration:none;">WPM Test</a></h3>
+          <p>Everything about Words Per Minute — what it means, how it's measured, and what different scores represent. <a href="/wpm-test/" style="color:var(--accent2);text-decoration:none;">Read more →</a></p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🎯</div>
+          <h3><a href="/typing-practice/" style="color:inherit;text-decoration:none;">Typing Practice</a></h3>
+          <p>A practical guide to improving accuracy and speed through structured daily practice sessions. <a href="/typing-practice/" style="color:var(--accent2);text-decoration:none;">Read more →</a></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── FINAL CTA ── -->
+    <section class="cta-section" style="padding-top:0;">
+      <h2>Ready to test your actual speed?</h2>
+      <p>Free, instant, and no sign-up required. See your real WPM in under 60 seconds.</p>
+      <a href="https://typeracer-pro-web.vercel.app/#test" class="btn btn-primary btn-lg">
+        Start the Typing Test →
+      </a>
+    </section>
+
+  </main>
+
+  <!-- ══════════════════════════════
+       FOOTER
+  ══════════════════════════════ -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <span aria-hidden="true">⌨️</span>
+            <span>TypeRacer<span class="logo-accent">Pro</span></span>
+          </div>
+          <p class="footer-tagline">Free online typing speed test — no signup, no ads, no tracking.</p>
+        </div>
+        <nav class="footer-nav" aria-label="Footer navigation">
+          <div class="footer-nav-col">
+            <span class="footer-nav-heading">Pages</span>
+            <a href="/">Home</a>
+            <a href="/#test">Typing Test</a>
+            <a href="/#about">About</a>
+            <a href="/#privacy">Privacy Policy</a>
+          </div>
+          <div class="footer-nav-col">
+            <span class="footer-nav-heading">Resources</span>
+            <a href="/typing-speed-test/">Typing Speed Test</a>
+            <a href="/wpm-test/">WPM Test</a>
+            <a href="/typing-practice/">Typing Practice</a>
+            <a href="/typing-speed-calculator/">WPM Calculator</a>
+          </div>
+          <div class="footer-nav-col">
+            <span class="footer-nav-heading">Test Modes</span>
+            <a href="/#test">30 Second Test</a>
+            <a href="/#test">60 Second Test</a>
+            <a href="/#test">120 Second Test</a>
+          </div>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2026 TypeRacerPro · Free &amp; Open Source · No data collected</p>
+        <div class="footer-bottom-links">
+          <a href="/#privacy">Privacy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ══════════════════════════════
+       INLINE SCRIPT
+       — theme toggle
+       — mobile menu
+       — FAQ accordion
+       — WPM calculator logic (isolated to this page)
+       script.js is NOT loaded here
+  ══════════════════════════════ -->
+  <script>
+    // ── Theme ─────────────────────────────────
+    const $html   = document.documentElement;
+    const $toggle = document.getElementById('theme-toggle');
+    const $icon   = document.getElementById('theme-icon');
+
+    function setTheme(t) {
+      $html.setAttribute('data-theme', t);
+      $icon.textContent = t === 'dark' ? '🌙' : '☀️';
+      localStorage.setItem('typeracer_theme', t);
+    }
+    setTheme(localStorage.getItem('typeracer_theme') || 'dark');
+    $toggle.addEventListener('click', () =>
+      setTheme($html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark')
+    );
+
+    // ── Mobile Hamburger ──────────────────────
+    const $hamburger  = document.getElementById('hamburger');
+    const $mobileMenu = document.getElementById('mobile-menu');
+    $hamburger.addEventListener('click', () => {
+      const open = $mobileMenu.classList.toggle('open');
+      $hamburger.classList.toggle('open', open);
+    });
+    document.addEventListener('click', (e) => {
+      if (!$hamburger.contains(e.target) && !$mobileMenu.contains(e.target)) {
+        $mobileMenu.classList.remove('open');
+        $hamburger.classList.remove('open');
+      }
+    });
+
+    // ── FAQ Accordion ─────────────────────────
+    document.querySelectorAll('.faq-q').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item   = btn.closest('.faq-item');
+        const isOpen = btn.getAttribute('aria-expanded') === 'true';
+        document.querySelectorAll('.faq-item').forEach(i => {
+          i.classList.remove('open');
+          i.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
+          i.querySelector('.faq-a').hidden = true;
+        });
+        if (!isOpen) {
+          item.classList.add('open');
+          btn.setAttribute('aria-expanded', 'true');
+          item.querySelector('.faq-a').hidden = false;
+        }
+      });
+    });
+
+    // ── WPM Calculator ────────────────────────
+    //
+    // Formula (characters mode):
+    //   correctChars = totalChars - errors
+    //   WPM          = (correctChars / 5) / (seconds / 60)
+    //   accuracy     = (correctChars / totalChars) * 100
+    //   CPM          = (correctChars / seconds) * 60
+    //
+    // Formula (words mode):
+    //   correctWords = totalWords - (errors treated as whole words missed)
+    //   WPM          = correctWords / (seconds / 60)
+    //   accuracy     = (correctWords / totalWords) * 100
+    //   CPM          = WPM * 5   (estimated)
+
+    const calcBtn    = document.getElementById('calc-btn');
+    const calcReset  = document.getElementById('calc-reset');
+    const calcError  = document.getElementById('calc-error');
+    const calcRes    = document.getElementById('calc-results');
+
+    function getRating(wpm) {
+      if (wpm >= 100) return { label: '⚡ Expert',        msg: 'Outstanding — top-tier typing speed.' };
+      if (wpm >= 70)  return { label: '🚀 Professional',  msg: 'Faster than most office workers. Great work.' };
+      if (wpm >= 50)  return { label: '🔥 Fast',          msg: 'Well above average. Strong foundation.' };
+      if (wpm >= 35)  return { label: '✅ Good',          msg: 'Slightly above average. Keep practising.' };
+      if (wpm >= 20)  return { label: '📈 Average',       msg: 'Room to grow — daily practice will help quickly.' };
+      return              { label: '🌱 Beginner',      msg: 'Just getting started — every session counts.' };
+    }
+
+    function showError(msg) {
+      calcError.textContent = msg;
+      calcError.classList.add('visible');
+      calcRes.classList.remove('visible');
+    }
+    function clearError() {
+      calcError.textContent = '';
+      calcError.classList.remove('visible');
+    }
+
+    calcBtn.addEventListener('click', () => {
+      clearError();
+
+      const mode    = document.getElementById('calc-mode').value;
+      const rawMain = parseFloat(document.getElementById('calc-chars').value);
+      const rawSecs = parseFloat(document.getElementById('calc-seconds').value);
+      const rawErr  = parseFloat(document.getElementById('calc-errors').value) || 0;
+
+      // Validation
+      if (!rawMain || rawMain < 1) {
+        showError('Please enter the number of ' + (mode === 'chars' ? 'characters' : 'words') + ' typed (minimum 1).');
+        return;
+      }
+      if (!rawSecs || rawSecs < 1) {
+        showError('Please enter the time elapsed in seconds (minimum 1).');
+        return;
+      }
+      if (rawErr < 0) {
+        showError('Error count cannot be negative.');
+        return;
+      }
+      if (rawErr >= rawMain) {
+        showError('Errors cannot be equal to or greater than total characters/words typed.');
+        return;
+      }
+
+      const minutes    = rawSecs / 60;
+      let wpm, accuracy, cpm;
+
+      if (mode === 'chars') {
+        const correct = rawMain - rawErr;
+        wpm      = (correct / 5) / minutes;
+        accuracy = (correct / rawMain) * 100;
+        cpm      = correct / minutes;
+      } else {
+        // words mode
+        const correctWords = rawMain - rawErr;
+        wpm      = correctWords / minutes;
+        accuracy = (correctWords / rawMain) * 100;
+        cpm      = wpm * 5; // estimated CPM
+      }
+
+      // Guard against impossibly high results
+      if (wpm > 300) {
+        showError('Result exceeds 300 WPM — please check your inputs.');
+        return;
+      }
+
+      const wpmRounded = Math.round(wpm);
+      const cpmRounded = Math.round(cpm);
+      const accRounded = Math.min(100, Math.round(accuracy * 10) / 10);
+
+      document.getElementById('res-wpm').textContent      = wpmRounded;
+      document.getElementById('res-accuracy').textContent = accRounded + '%';
+      document.getElementById('res-cpm').textContent      = cpmRounded;
+
+      const rating = getRating(wpmRounded);
+      document.getElementById('res-rating').textContent = rating.label;
+      document.getElementById('res-msg').textContent    = rating.msg;
+
+      calcRes.classList.add('visible');
+      // Scroll results into view smoothly
+      calcRes.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    });
+
+    // Allow Enter key to trigger calculation
+    document.querySelectorAll('.calc-input').forEach(input => {
+      input.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') calcBtn.click();
+      });
+    });
+
+    calcReset.addEventListener('click', () => {
+      document.getElementById('calc-chars').value  = '';
+      document.getElementById('calc-seconds').value = '';
+      document.getElementById('calc-errors').value  = '';
+      document.getElementById('calc-mode').value    = 'chars';
+      calcRes.classList.remove('visible');
+      clearError();
+      document.getElementById('calc-chars').focus();
+    });
+  </script>
+</body>
+</html>
