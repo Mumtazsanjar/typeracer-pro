@@ -223,19 +223,27 @@
     .formula-box strong { color: var(--text-primary); }
 
     /* Examples table */
+    .examples-table-wrap {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      margin-top: 0.75rem;
+      border-radius: var(--radius-sm);
+    }
     .examples-table {
       width: 100%; border-collapse: collapse;
-      font-size: 0.85rem; margin-top: 0.75rem;
+      font-size: 0.8rem; min-width: 320px;
     }
     .examples-table th {
-      text-align: left; padding: 0.5rem 0.75rem;
-      font-size: 0.72rem; font-weight: 700;
+      text-align: left; padding: 0.45rem 0.6rem;
+      font-size: 0.68rem; font-weight: 700;
       color: var(--text-secondary); text-transform: uppercase;
       letter-spacing: 0.07em; border-bottom: 1px solid var(--border);
+      white-space: nowrap;
     }
     .examples-table td {
-      padding: 0.55rem 0.75rem; color: var(--text-secondary);
+      padding: 0.45rem 0.6rem; color: var(--text-secondary);
       border-bottom: 1px solid var(--border);
+      white-space: nowrap;
     }
     .examples-table tr:last-child td { border-bottom: none; }
     .examples-table td:first-child { color: var(--text-primary); font-weight: 600; }
@@ -457,6 +465,7 @@
           <div class="feature-icon">📋</div>
           <h2 id="calc-examples">Worked Examples</h2>
           <p>Here's how different inputs translate into WPM scores:</p>
+          <div class="examples-table-wrap">
           <table class="examples-table" aria-label="WPM calculation examples">
             <thead>
               <tr>
@@ -505,6 +514,7 @@
               </tr>
             </tbody>
           </table>
+          </div>
         </article>
 
         <!-- Calculator vs live test -->
