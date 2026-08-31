@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ═══ PRIMARY SEO ═══ -->
+  <title>Typing Tips &amp; Guides | TypeRacer Pro</title>
+  <meta name="description" content="Typing tips, WPM guides, and practical advice to help you type faster and more accurately. Free resources from TypeRacer Pro." />
+  <meta name="author" content="TypeRacer Pro" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <link rel="canonical" href="https://typeracer-pro-web.vercel.app/blog/" />
+
+  <!-- ═══ OPEN GRAPH ═══ -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://typeracer-pro-web.vercel.app/blog/" />
+  <meta property="og:title"       content="Typing Tips &amp; Guides | TypeRacer Pro" />
+  <meta property="og:description" content="Typing tips, WPM guides, and practical advice to help you type faster and more accurately." />
+  <meta property="og:site_name"   content="TypeRacer Pro" />
+  <meta property="og:locale"      content="en_US" />
+
+  <!-- ═══ TWITTER CARD ═══ -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:url"         content="https://typeracer-pro-web.vercel.app/blog/" />
+  <meta name="twitter:title"       content="Typing Tips &amp; Guides | TypeRacer Pro" />
+  <meta name="twitter:description" content="Practical typing tips and WPM guides from TypeRacer Pro." />
+
+  <!-- ═══ THEME & APP META ═══ -->
+  <meta name="theme-color" content="#7c6af5" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⌨️</text></svg>" />
+
+  <!-- ═══ SCHEMA.ORG – BreadcrumbList ═══ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://typeracer-pro-web.vercel.app/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blog",
+        "item": "https://typeracer-pro-web.vercel.app/blog/"
+      }
+    ]
+  }
+  </script>
+
+  <!-- ═══ SCHEMA.ORG – Blog ═══ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "Typing Tips & Guides",
+    "url": "https://typeracer-pro-web.vercel.app/blog/",
+    "description": "Typing tips, WPM guides, and practical advice to help you type faster and more accurately.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "TypeRacer Pro",
+      "url": "https://typeracer-pro-web.vercel.app/"
+    },
+    "blogPost": [
+      {
+        "@type": "BlogPosting",
+        "headline": "How to Improve Your Typing Speed: 10 Practical Tips",
+        "url": "https://typeracer-pro-web.vercel.app/blog/how-to-improve-typing-speed/",
+        "datePublished": "2026-08-31",
+        "description": "Learn how to improve typing speed with practical techniques for WPM, accuracy, touch typing, keyboard practice and consistent training."
+      }
+    ]
+  }
+  </script>
+
+  <!-- ═══ PERFORMANCE ═══ -->
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" />
+
+  <style>
+    /* ── Blog listing styles (scoped) ── */
+    .blog-hero {
+      max-width: 760px; margin: 0 auto;
+      padding: 3rem 1.5rem 2rem;
+      text-align: center;
+    }
+    .blog-listing {
+      max-width: 760px; margin: 0 auto;
+      padding: 0 1.5rem 5rem;
+      display: flex; flex-direction: column; gap: 1.5rem;
+    }
+    .blog-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1.75rem;
+      transition: border-color var(--transition), transform var(--transition),
+                  box-shadow var(--transition);
+      text-decoration: none; color: inherit; display: block;
+    }
+    .blog-card:hover {
+      border-color: var(--accent); transform: translateY(-3px);
+      box-shadow: 0 8px 32px var(--accent-glow);
+    }
+    .blog-card-meta {
+      display: flex; align-items: center; gap: 0.75rem;
+      flex-wrap: wrap; margin-bottom: 0.75rem;
+    }
+    .blog-cat {
+      display: inline-block; padding: 0.2rem 0.7rem;
+      background: rgba(124,106,245,0.15); border: 1px solid rgba(124,106,245,0.3);
+      border-radius: 50px; font-size: 0.72rem; font-weight: 600;
+      color: var(--accent2); letter-spacing: 0.04em;
+    }
+    .blog-date, .blog-read-time {
+      font-size: 0.78rem; color: var(--text-muted);
+    }
+    .blog-card-title {
+      font-size: clamp(1.1rem, 2.5vw, 1.3rem); font-weight: 700;
+      color: var(--text-primary); margin-bottom: 0.6rem;
+      line-height: 1.35;
+    }
+    .blog-card-excerpt {
+      font-size: 0.9rem; color: var(--text-secondary);
+      line-height: 1.7; margin-bottom: 1rem;
+    }
+    .blog-read-link {
+      font-size: 0.875rem; font-weight: 600;
+      color: var(--accent2); text-decoration: none;
+      transition: color var(--transition);
+    }
+    .blog-read-link:hover { color: var(--accent); }
+    .blog-divider {
+      text-align: center; font-size: 0.8rem;
+      color: var(--text-muted); padding: 1rem 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Animated background blobs -->
+  <div class="bg-blob blob1"></div>
+  <div class="bg-blob blob2"></div>
+  <div class="bg-blob blob3"></div>
+
+  <!-- ══════════════════════════════
+       NAVBAR
+  ══════════════════════════════ -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo" aria-label="TypeRacer Pro Home">
+        <span class="logo-icon">⌨️</span>
+        <span class="logo-text">TypeRacer<span class="logo-accent">Pro</span></span>
+      </a>
+      <ul class="nav-links" id="nav-links">
+        <li><a class="nav-link" href="/">Home</a></li>
+        <li><a class="nav-link" href="/#test">Test</a></li>
+        <li><a class="nav-link active" href="/blog/">Blog</a></li>
+        <li><a class="nav-link" href="/#about">About</a></li>
+        <li><a class="nav-link" href="/#privacy">Privacy</a></li>
+      </ul>
+      <div class="nav-controls">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+          <span class="theme-icon" id="theme-icon">🌙</span>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="mobile-menu" id="mobile-menu">
+      <a class="mobile-link" href="/">Home</a>
+      <a class="mobile-link" href="/#test">Test</a>
+      <a class="mobile-link active" href="/blog/">Blog</a>
+      <a class="mobile-link" href="/#about">About</a>
+      <a class="mobile-link" href="/#privacy">Privacy</a>
+    </div>
+  </nav>
+
+  <!-- ══════════════════════════════
+       MAIN CONTENT
+  ══════════════════════════════ -->
+  <main style="padding-top: var(--nav-h);">
+
+    <!-- ── BREADCRUMB ── -->
+    <nav class="lp-breadcrumb" aria-label="Breadcrumb">
+      <div class="lp-breadcrumb-inner">
+        <ol>
+          <li><a href="/">Home</a></li>
+          <li aria-hidden="true">›</li>
+          <li aria-current="page">Blog</li>
+        </ol>
+      </div>
+    </nav>
+
+    <!-- ── BLOG HERO ── -->
+    <header class="blog-hero">
+      <div class="hero-badge">📝 Tips &amp; Guides</div>
+      <h1 class="hero-title" style="font-size: clamp(2rem,4vw,2.8rem); margin-bottom: 0.75rem;">
+        Typing Tips &amp; <span class="gradient-text">Guides</span>
+      </h1>
+      <p style="color: var(--text-secondary); font-size: 1rem; line-height: 1.7; max-width: 520px; margin: 0 auto;">
+        Practical advice on typing speed, WPM, touch typing, and keyboard habits.
+        No fluff — just techniques that work.
+      </p>
+    </header>
+
+    <!-- ── ARTICLE LISTING ── -->
+    <section class="blog-listing" aria-label="Blog articles">
+
+      <!-- Article 1 -->
+      <article>
+        <a href="/blog/how-to-improve-typing-speed/" class="blog-card">
+          <div class="blog-card-meta">
+            <span class="blog-cat">Typing Tips</span>
+            <span class="blog-date">31 August 2026</span>
+            <span class="blog-read-time">· 8 min read</span>
+          </div>
+          <h2 class="blog-card-title">
+            How to Improve Your Typing Speed: 10 Practical Tips
+          </h2>
+          <p class="blog-card-excerpt">
+            Whether you're starting from scratch or trying to push past a plateau,
+            these ten techniques cover everything from touch typing fundamentals
+            and finger positioning to how accuracy, practice consistency, and
+            the right test length all affect your real-world WPM.
+          </p>
+          <span class="blog-read-link" aria-label="Read: How to Improve Your Typing Speed">
+            Read Article →
+          </span>
+        </a>
+      </article>
+
+      <p class="blog-divider">More articles coming soon.</p>
+
+    </section>
+
+  </main>
+
+  <!-- ══════════════════════════════
+       FOOTER
+  ══════════════════════════════ -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <span aria-hidden="true">⌨️</span>
+            <span>TypeRacer<span class="logo-accent">Pro</span></span>
+          </div>
+          <p class="footer-tagline">Free online typing speed test — no signup, no ads, no tracking.</p>
+        </div>
+        <nav class="footer-nav" aria-label="Footer navigation">
+          <div class="footer-nav-col">
+            <span class="footer-nav-heading">Pages</span>
+            <a href="/">Home</a>
+            <a href="/#test">Typing Test</a>
+            <a href="/#about">About</a>
+            <a href="/#privacy">Privacy Policy</a>
+          </div>
+          <div class="footer-nav-col">
+            <span class="footer-nav-heading">Resources</span>
+            <a href="/typing-speed-test/">Typing Speed Test</a>
+            <a href="/wpm-test/">WPM Test</a>
+            <a href="/typing-practice/">Typing Practice</a>
+            <a href="/typing-speed-calculator/">WPM Calculator</a>
+            <a href="/blog/">Blog</a>
+          </div>
+          <div class="footer-nav-col">
+            <span class="footer-nav-heading">Test Modes</span>
+            <a href="/#test">30 Second Test</a>
+            <a href="/#test">60 Second Test</a>
+            <a href="/#test">120 Second Test</a>
+          </div>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2026 TypeRacerPro · Free &amp; Open Source · No data collected</p>
+        <div class="footer-bottom-links">
+          <a href="/#privacy">Privacy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // ── Theme ─────────────────────────────────
+    const $html   = document.documentElement;
+    const $toggle = document.getElementById('theme-toggle');
+    const $icon   = document.getElementById('theme-icon');
+    function setTheme(t) {
+      $html.setAttribute('data-theme', t);
+      $icon.textContent = t === 'dark' ? '🌙' : '☀️';
+      localStorage.setItem('typeracer_theme', t);
+    }
+    setTheme(localStorage.getItem('typeracer_theme') || 'dark');
+    $toggle.addEventListener('click', () =>
+      setTheme($html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark')
+    );
+    // ── Mobile Hamburger ──────────────────────
+    const $hamburger  = document.getElementById('hamburger');
+    const $mobileMenu = document.getElementById('mobile-menu');
+    $hamburger.addEventListener('click', () => {
+      const open = $mobileMenu.classList.toggle('open');
+      $hamburger.classList.toggle('open', open);
+    });
+    document.addEventListener('click', (e) => {
+      if (!$hamburger.contains(e.target) && !$mobileMenu.contains(e.target)) {
+        $mobileMenu.classList.remove('open');
+        $hamburger.classList.remove('open');
+      }
+    });
+  </script>
+</body>
+</html>
