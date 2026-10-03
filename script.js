@@ -151,6 +151,27 @@ const textLibraries = {
     "the man drove his old car down the long dirt road to the far blue hills",
     "the dog ran fast to fetch the stick and dropped it at the old mans feet",
     "she tied her long hair back and went out into the bright cool morning air",
+    // Extended passages for 5m/10m modes
+    "the rain fell soft on the roof while the family sat by the warm fire inside",
+    "he picked the ripe fruit from the tall tree and put it in the wide wicker basket",
+    "the teacher wrote the long sum on the white board and the kids tried hard to solve it",
+    "she found a small key in the old box and used it to open the red door at the end",
+    "the clouds moved fast across the wide blue sky and the wind was cold and strong",
+    "he put on his coat and hat and walked down the long road to the old stone bridge",
+    "the big ship sailed slow past the rocky cliffs and the gulls cried out loud above it",
+    "she wrote a long note and left it on the table for her mum to read when she got back",
+    "the cat curled up on the warm soft chair and fell fast asleep by the sunny window",
+    "he woke to hear the birds sing and the smell of fresh bread drifting up the stairs",
+    "the kids ran out to the field and played till the sun dipped behind the far off hills",
+    "she kept all her old stamps in a tin box that sat on the shelf above the small desk",
+    "the lake was calm and still in the dawn light and a thin mist lay over the far shore",
+    "he cut the long grass with the old mower and then raked it into a neat pile by the wall",
+    "the train moved through the dark tunnel and came out into a bright open valley of green",
+    "she poured the cold milk into the tall glass and drank it down in one long slow gulp",
+    "the old dog lay in the sun and watched the kids throw the ball back and forth in the yard",
+    "he read the short note twice and then put it back in the old brown envelope with care",
+    "the shop was full of bright things and she did not know what to pick from the wide shelf",
+    "the small boat rocked on the waves and he held the rope tight to keep it from drifting off",
   ],
   medium: [
     "Programming is the art of telling a computer what to do with precise and logical instructions.",
@@ -183,6 +204,27 @@ const textLibraries = {
     "Keeping a daily journal helps you track your thoughts, reflect on your progress, and set goals.",
     "The ability to focus deeply on one task at a time is becoming one of the rarest and most valuable skills.",
     "Curiosity is the engine of achievement; the more questions you ask, the more you will learn.",
+    // Extended passages for 5m/10m modes
+    "The most powerful productivity habit is also the simplest: decide what matters most and do it first.",
+    "Building confidence takes time but the fastest route is to take small actions consistently every single day.",
+    "Every piece of software you use was written by someone who faced the same confusion you are feeling right now.",
+    "The difference between an expert and a beginner is simply the number of hours spent in deliberate practice.",
+    "A well-written function does one thing, does it clearly, and does not surprise the person who reads it later.",
+    "Communication is the most underrated technical skill because the best code is useless if nobody can understand it.",
+    "Deadlines create focus and focus creates momentum; the pressure of a deadline is often the start of real progress.",
+    "Good documentation is a gift to your future self and a kindness to every developer who works on the code after you.",
+    "The hardest part of any creative project is not the start or the finish; it is the long middle where doubt lives.",
+    "Attention is the scarcest resource in the modern world; whoever earns it and holds it respectfully has real power.",
+    "Version control is not just a backup system; it is a time machine that lets you understand how a project evolved.",
+    "The ability to estimate effort accurately is one of the most valuable and rarest skills a software developer can have.",
+    "Writing tests before you write the code forces you to think about what the code is supposed to do before you do it.",
+    "A fast feedback loop between writing code and seeing results is the single biggest driver of learning in programming.",
+    "Most bugs are not caused by complex algorithmic errors; they come from simple assumptions that turned out to be wrong.",
+    "The best way to debug a problem is to explain it out loud, because the act of explaining often reveals the answer.",
+    "Refactoring without tests is not refactoring at all; it is rewriting with hope and hope is not a reliable strategy.",
+    "Code that is easy to delete is often more valuable than code that is easy to extend; simplicity outlasts cleverness.",
+    "The gap between a working prototype and a production-ready system is where most of the real engineering work lives.",
+    "Learning to read other people's code without judgment is one of the fastest ways to improve your own coding skills.",
   ],
   hard: [
     "Asynchronous programming in JavaScript requires a thorough understanding of Promises, async/await syntax, and the event loop mechanism.",
@@ -215,6 +257,27 @@ const textLibraries = {
     "The actor model treats concurrent computation as a collection of isolated actors that communicate exclusively through asynchronous message passing.",
     "Bloom filters provide probabilistic set membership testing with a controllable false-positive rate, using significantly less memory than exact data structures.",
     "Static analysis tools examine source code without executing it, detecting potential bugs, security vulnerabilities, and style violations at compile time.",
+    // Extended passages for 5m/10m modes
+    "The principle of least privilege dictates that every process, user, and system component should have only the minimum permissions required to perform its function.",
+    "Eventual consistency in distributed databases means that given enough time without new updates, all replicas will converge to the same value across every node.",
+    "Service meshes like Istio offload cross-cutting concerns such as mutual TLS, circuit breaking, and telemetry collection from individual application services.",
+    "The strategy pattern defines a family of interchangeable algorithms, encapsulates each one, and lets clients select the appropriate behavior at runtime without modification.",
+    "Horizontal scaling distributes load across multiple identical instances while vertical scaling increases the resources of a single instance to handle greater throughput.",
+    "Abstract syntax trees represent the hierarchical syntactic structure of source code and form the foundation of compilers, linters, and code transformation tools.",
+    "The command pattern encapsulates a request as an object, allowing parameterization, queuing, logging, and undoable operations without coupling sender and receiver.",
+    "Chaos engineering intentionally injects failures into production systems to discover weaknesses before they manifest as unplanned outages affecting real users.",
+    "Idempotency ensures that executing the same operation multiple times produces the same result as executing it once, which is critical for reliable distributed systems.",
+    "The open-closed principle states that software entities should be open for extension but closed for modification, promoting stability without sacrificing flexibility.",
+    "Sharding partitions a database horizontally across multiple nodes by distributing rows according to a shard key, enabling linear scaling of write throughput.",
+    "Semantic versioning communicates compatibility guarantees through a three-part version number where major, minor, and patch increments have precise and agreed meanings.",
+    "The mediator pattern reduces the complexity of many-to-many object interactions by routing all communication through a central mediator object that coordinates behavior.",
+    "Language server protocol standardises communication between editors and language tooling, allowing a single language server implementation to power any compatible editor.",
+    "Circuit breakers in microservice architectures prevent cascading failures by temporarily halting requests to an unresponsive service until it recovers to healthy status.",
+    "Database connection pooling reuses a set of pre-established connections rather than opening and closing a new connection for every query, dramatically reducing overhead.",
+    "The decorator pattern attaches additional responsibilities to an object dynamically, offering a flexible alternative to subclassing for extending functionality at runtime.",
+    "Trunk-based development reduces long-lived feature branches by committing small incremental changes directly to the main branch behind feature flags for safe deployment.",
+    "Observability in distributed systems goes beyond traditional monitoring by capturing logs, metrics, and distributed traces that together explain why a system behaves unexpectedly.",
+    "The iterator pattern provides a uniform interface for traversing different collection types without exposing their underlying representation or internal data structure details.",
   ],
 };
 
@@ -280,7 +343,7 @@ function init(newText = true) {
 
   $wpm.textContent             = '0';
   $accuracy.textContent        = '100';
-  $timerEl.textContent         = state.selectedTime;
+  $timerEl.textContent         = formatTimer(state.selectedTime);
   $streak.textContent          = '0';
   $progressBar.style.width     = '0%';
   $progressLabel.textContent   = '0%';
@@ -302,6 +365,41 @@ function getRandomText() {
   const text = available[Math.floor(Math.random() * available.length)];
   state.usedTexts[state.difficulty].push(text);
   return text;
+}
+
+// ── Extend text for long modes (5m / 10m) — append more words seamlessly
+function extendText() {
+  const newText  = getRandomText();
+  const newWords = newText.split(' ');
+  const startIdx = state.words.length;
+
+  // Append to logical words array
+  state.words = state.words.concat(newWords);
+
+  // Append new word elements to the display
+  newWords.forEach((word, i) => {
+    const wi = startIdx + i;
+    const wordEl = document.createElement('span');
+    wordEl.classList.add('word');
+    wordEl.dataset.index = wi;
+
+    [...word].forEach((char, li) => {
+      const el = document.createElement('span');
+      el.classList.add('letter');
+      el.textContent = char;
+      if (wi === state.currentWordIndex && li === 0) el.classList.add('current');
+      wordEl.appendChild(el);
+    });
+
+    $textDisplay.appendChild(wordEl);
+
+    if (wi < state.words.length - 1) {
+      const sp = document.createElement('span');
+      sp.classList.add('letter', 'space-letter');
+      sp.textContent = ' ';
+      wordEl.appendChild(sp);
+    }
+  });
 }
 
 // ── Render words/letters into display div
@@ -343,6 +441,16 @@ function updateCursor() {
   }
 }
 
+// ── Format timer display: MM:SS for ≥60s, raw seconds otherwise
+function formatTimer(secs) {
+  if (secs >= 60) {
+    const m = Math.floor(secs / 60);
+    const s = secs % 60;
+    return m + ':' + String(s).padStart(2, '0');
+  }
+  return String(secs);
+}
+
 // ── Start countdown timer
 function startTimer() {
   if (state.intervalId) return;
@@ -350,12 +458,16 @@ function startTimer() {
 
   state.intervalId = setInterval(() => {
     state.timer--;
-    $timerEl.textContent = state.timer;
+    $timerEl.textContent = formatTimer(state.timer);
 
-    if (state.timer <= 10) {
+    // Dynamic warning thresholds — scale with test length
+    const warnAt   = Math.min(20, Math.round(state.selectedTime * 0.1));
+    const dangerAt = Math.min(10, Math.round(state.selectedTime * 0.05));
+
+    if (state.timer <= dangerAt) {
       $timerEl.classList.add('timer-danger');
       $timerEl.classList.remove('timer-warning');
-    } else if (state.timer <= 20) {
+    } else if (state.timer <= warnAt) {
       $timerEl.classList.add('timer-warning');
     }
 
@@ -440,7 +552,16 @@ $input.addEventListener('input', () => {
 
     updateLiveStats();
 
-    if (state.currentWordIndex >= state.words.length) { endTest(); return; }
+    if (state.currentWordIndex >= state.words.length) {
+      // Long modes (5m / 10m): append more text instead of ending early
+      if (state.selectedTime >= 300 && state.isRunning) {
+        extendText();
+        updateCursor();
+      } else {
+        endTest();
+      }
+      return;
+    }
     updateCursor();
     return;
   }
@@ -723,7 +844,7 @@ document.querySelectorAll('.time-tab').forEach(tab => {
     document.querySelectorAll('.time-tab').forEach(t => t.classList.remove('active'));
     tab.classList.add('active');
     state.selectedTime = parseInt(tab.dataset.time);
-    $timerEl.textContent = state.selectedTime;
+    $timerEl.textContent = formatTimer(state.selectedTime);
     resetTest(false);
   });
 });
