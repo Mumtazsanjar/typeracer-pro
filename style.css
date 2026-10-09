@@ -968,16 +968,6 @@ a { cursor: pointer; text-decoration: none; color: inherit; }
   letter-spacing: 0.08em;
   margin-bottom: 0.6rem;
 }
-.vkb {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 0.85rem 0.75rem;
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  box-shadow: var(--shadow);
-}
 .vkb-row {
   display: flex;
   gap: 4px;
@@ -1185,61 +1175,71 @@ a { cursor: pointer; text-decoration: none; color: inherit; }
    VIRTUAL KEYBOARD — HAND OVERLAY (on top of keyboard)
    ============================================ */
 
-/* Make vkb a positioning context for the overlay */
+/* ============================================
+   VIRTUAL KEYBOARD — HAND OVERLAY
+   ============================================ */
+
+/* vkb container becomes the positioning parent */
 .vkb {
   position: relative;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.85rem 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  box-shadow: var(--shadow);
 }
 
-/* Full-width SVG sitting ON TOP of the keyboard */
-.vkb-hands-overlay {
+/* SVG overlay — absolute, covers the keyboard rows only */
+.vkb-hands-svg {
   position: absolute;
   top: 0; left: 0;
-  width: 100%; height: 100%;
+  width: 100%;
+  height: 100%;
   pointer-events: none;
   user-select: none;
-  overflow: visible;
+  overflow: hidden;
 }
 
 /* Palm */
 .hand-palm {
-  fill: rgba(200,210,230,0.18);
-  stroke: rgba(150,160,190,0.35);
+  fill: var(--surface2);
+  stroke: var(--border);
   stroke-width: 1;
+  opacity: 0.9;
 }
 
-/* Finger default — semi-transparent so keyboard shows through */
+/* Finger — semi-transparent by default so keys show through */
 .finger-shape {
-  fill: rgba(180,190,220,0.22);
-  stroke: rgba(140,150,190,0.50);
+  fill: rgba(180,190,220,0.30);
+  stroke: rgba(130,140,180,0.55);
   stroke-width: 1.5;
-  transition: fill 0.1s ease, stroke 0.1s ease,
+  transition: fill 0.12s ease, stroke 0.12s ease,
               filter 0.12s ease, transform 0.12s ease;
 }
 
-/* Home-row index fingers (F / J) — always subtly accented */
-#lf-index .finger-shape { fill: rgba(124,106,245,0.20); stroke: rgba(124,106,245,0.55); }
-#rf-index .finger-shape { fill: rgba(124,106,245,0.20); stroke: rgba(124,106,245,0.55); }
+/* Home-row index fingers (F / J) — always lightly accented */
+#lf-index .finger-shape { fill: rgba(124,106,245,0.22); stroke: rgba(124,106,245,0.55); }
+#rf-index .finger-shape { fill: rgba(124,106,245,0.22); stroke: rgba(124,106,245,0.55); }
 
-/* ACTIVE — finger presses DOWN and lights up */
+/* ACTIVE — finger presses down + purple glow */
 .hand-finger.finger-active .finger-shape {
-  fill: rgba(124,106,245,0.70);
+  fill: rgba(124,106,245,0.72);
   stroke: var(--accent2);
   stroke-width: 2;
-  filter: drop-shadow(0 0 8px var(--accent-glow));
-  transform: translateY(6px);
+  filter: drop-shadow(0 0 6px rgba(124,106,245,0.6));
+  transform: translateY(5px);
 }
 
-/* Thumb active */
-#lf-thumb.finger-active .finger-shape { transform: translateY(4px) rotate(-18deg); fill: rgba(124,106,245,0.70); stroke: var(--accent2); filter: drop-shadow(0 0 8px var(--accent-glow)); }
-#rf-thumb.finger-active .finger-shape { transform: translateY(4px) rotate(18deg);  fill: rgba(124,106,245,0.70); stroke: var(--accent2); filter: drop-shadow(0 0 8px var(--accent-glow)); }
-
-/* Light mode — slightly darker tint so fingers are visible */
-[data-theme="light"] .hand-palm   { fill: rgba(100,110,160,0.10); stroke: rgba(100,110,160,0.30); }
-[data-theme="light"] .finger-shape { fill: rgba(100,110,160,0.14); stroke: rgba(100,110,160,0.40); }
+/* Light mode */
+[data-theme="light"] .hand-palm     { fill: #dde3ef; stroke: #b8c2d8; }
+[data-theme="light"] .finger-shape  { fill: rgba(109,86,240,0.12); stroke: rgba(109,86,240,0.35); }
 [data-theme="light"] #lf-index .finger-shape,
-[data-theme="light"] #rf-index .finger-shape { fill: rgba(109,86,240,0.18); stroke: rgba(109,86,240,0.50); }
-
-/* Hide on very small screens */
-@media (max-width: 400px) {
-  .vkb-hands-overlay { display: none; }
+[data-theme="light"] #rf-index .finger-shape {
+  fill: rgba(109,86,240,0.20); stroke: rgba(109,86,240,0.55);
 }
+
+/* Hide at 400px */
+@media (max-width: 400px) { .vkb-hands-svg { display: none; } }
