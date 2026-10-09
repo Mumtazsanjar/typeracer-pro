@@ -644,7 +644,64 @@
             <div class="vkb-key vkb-space" data-key=" ">Space</div>
           </div>
         </div>
-      </div>
+
+        <!-- ── Hand Overlays ── -->
+        <div class="vkb-hands" id="vkb-hands" aria-hidden="true">
+
+          <!-- LEFT HAND -->
+          <svg class="vkb-hand vkb-hand-left" id="hand-left" viewBox="0 0 120 160" xmlns="http://www.w3.org/2000/svg">
+            <!-- Palm -->
+            <ellipse cx="60" cy="120" rx="42" ry="36" class="hand-palm"/>
+            <!-- Pinky (A Z 1 Q) -->
+            <g class="hand-finger" id="lf-pinky">
+              <rect x="10" y="52" width="16" height="52" rx="8" class="finger-shape"/>
+            </g>
+            <!-- Ring (S X 2 W) -->
+            <g class="hand-finger" id="lf-ring">
+              <rect x="30" y="36" width="16" height="68" rx="8" class="finger-shape"/>
+            </g>
+            <!-- Middle (D C 3 E) -->
+            <g class="hand-finger" id="lf-middle">
+              <rect x="50" y="28" width="16" height="76" rx="8" class="finger-shape"/>
+            </g>
+            <!-- Index (F G T R V B 4 5) -->
+            <g class="hand-finger" id="lf-index">
+              <rect x="70" y="36" width="16" height="68" rx="8" class="finger-shape"/>
+            </g>
+            <!-- Thumb (Space) -->
+            <g class="hand-finger" id="lf-thumb">
+              <rect x="88" y="108" width="24" height="14" rx="7" class="finger-shape" transform="rotate(-20 88 108)"/>
+            </g>
+          </svg>
+
+          <!-- RIGHT HAND -->
+          <svg class="vkb-hand vkb-hand-right" id="hand-right" viewBox="0 0 120 160" xmlns="http://www.w3.org/2000/svg">
+            <!-- Palm -->
+            <ellipse cx="60" cy="120" rx="42" ry="36" class="hand-palm"/>
+            <!-- Index (J H Y U N M 6 7) -->
+            <g class="hand-finger" id="rf-index">
+              <rect x="34" y="36" width="16" height="68" rx="8" class="finger-shape"/>
+            </g>
+            <!-- Middle (K , 8 I) -->
+            <g class="hand-finger" id="rf-middle">
+              <rect x="54" y="28" width="16" height="76" rx="8" class="finger-shape"/>
+            </g>
+            <!-- Ring (L . 9 O) -->
+            <g class="hand-finger" id="rf-ring">
+              <rect x="74" y="36" width="16" height="68" rx="8" class="finger-shape"/>
+            </g>
+            <!-- Pinky (; ' / Enter 0 - = P Backspace) -->
+            <g class="hand-finger" id="rf-pinky">
+              <rect x="94" y="52" width="16" height="52" rx="8" class="finger-shape"/>
+            </g>
+            <!-- Thumb (Space) -->
+            <g class="hand-finger" id="rf-thumb">
+              <rect x="8" y="108" width="24" height="14" rx="7" class="finger-shape" transform="rotate(20 32 108)"/>
+            </g>
+          </svg>
+
+        </div><!-- /.vkb-hands -->
+      </div><!-- /.vkb-wrap -->
 
       <!-- History -->
       <div class="history-section">

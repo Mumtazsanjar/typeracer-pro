@@ -885,10 +885,10 @@ document.addEventListener('keydown', (e) => {
 });
 
 // ══════════════════════════════════════════
-// VIRTUAL KEYBOARD
+// VIRTUAL KEYBOARD + HAND ANIMATION
 // ══════════════════════════════════════════
 (function () {
-  // Build a map: key-value → DOM element(s)
+  // ── Key → keyboard key highlight map ──
   const keyMap = {};
   document.querySelectorAll('.vkb-key').forEach(el => {
     const k = el.dataset.key.toLowerCase();
@@ -896,28 +896,73 @@ document.addEventListener('keydown', (e) => {
     keyMap[k].push(el);
   });
 
-  let activeTimers = {};
+  // ── Key → finger id map (standard touch-typing layout) ──
+  const fingerMap = {
+    // Left pinky
+    'q':'lf-pinky','a':'lf-pinky','z':'lf-pinky',
+    '1':'lf-pinky','`':'lf-pinky',
+    // Left ring
+    'w':'lf-ring','s':'lf-ring','x':'lf-ring','2':'lf-ring',
+    // Left middle
+    'e':'lf-middle','d':'lf-middle','c':'lf-middle','3':'lf-middle',
+    // Left index
+    'r':'lf-index','f':'lf-index','v':'lf-index','4':'lf-index',
+    't':'lf-index','g':'lf-index','b':'lf-index','5':'lf-index',
+    // Thumbs — space bar
+    ' ':'lf-thumb',
+    // Right index
+    'y':'rf-index','h':'rf-index','n':'rf-index','6':'rf-index',
+    'u':'rf-index','j':'rf-index','m':'rf-index','7':'rf-index',
+    // Right middle
+    'i':'rf-middle','k':'rf-middle',',':'rf-middle','8':'rf-middle',
+    // Right ring
+    'o':'rf-ring','l':'rf-ring','.':'rf-ring','9':'rf-ring',
+    // Right pinky
+    'p':'rf-pinky',';':'rf-pinky',"'":'rf-pinky','/':'rf-pinky',
+    '0':'rf-pinky','-':'rf-pinky','=':'rf-pinky',
+    'backspace':'rf-pinky','enter':'rf-pinky','[':'rf-pinky',']':'rf-pinky',
+    '\\':'rf-pinky',
+  };
+
+  // Cache finger DOM elements
+  const fingerEls = {};
+  ['lf-pinky','lf-ring','lf-middle','lf-index','lf-thumb',
+   'rf-index','rf-middle','rf-ring','rf-pinky','rf-thumb'].forEach(id => {
+    fingerEls[id] = document.getElementById(id);
+  });
+
+  let activeTimers   = {};
+  let fingerTimers   = {};
 
   function pressKey(key) {
     const k = key.toLowerCase();
+
+    // ── Highlight keyboard key ──
     const els = keyMap[k];
-    if (!els) return;
+    if (els) {
+      if (activeTimers[k]) clearTimeout(activeTimers[k]);
+      els.forEach(el => el.classList.add('vkb-active'));
+      activeTimers[k] = setTimeout(() => {
+        els.forEach(el => el.classList.remove('vkb-active'));
+        delete activeTimers[k];
+      }, 180);
+    }
 
-    // Clear existing timer for this key
-    if (activeTimers[k]) clearTimeout(activeTimers[k]);
-
-    els.forEach(el => el.classList.add('vkb-active'));
-
-    // Auto-release after 180ms
-    activeTimers[k] = setTimeout(() => {
-      els.forEach(el => el.classList.remove('vkb-active'));
-      delete activeTimers[k];
-    }, 180);
+    // ── Animate finger ──
+    const fingerId = fingerMap[k];
+    if (fingerId && fingerEls[fingerId]) {
+      const fEl = fingerEls[fingerId];
+      if (fingerTimers[fingerId]) clearTimeout(fingerTimers[fingerId]);
+      fEl.classList.add('finger-active');
+      fingerTimers[fingerId] = setTimeout(() => {
+        fEl.classList.remove('finger-active');
+        delete fingerTimers[fingerId];
+      }, 180);
+    }
   }
 
   // Listen on the typing input
   document.getElementById('typing-input').addEventListener('keydown', (e) => {
-    // Map special keys
     let key = e.key;
     if (key === ' ') key = ' ';
     pressKey(key);
