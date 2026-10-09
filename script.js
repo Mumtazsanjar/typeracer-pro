@@ -358,6 +358,7 @@ function init(newText = true) {
   $input.classList.remove('error');
   $timerEl.classList.remove('timer-warning', 'timer-danger');
   document.getElementById('timer-card').classList.add('timer-highlight');
+  $textDisplay.scrollTop = 0;
 
   renderText();
   $input.focus();
@@ -424,6 +425,17 @@ function updateCursor() {
   const letters = wordEl.querySelectorAll('.letter:not(.space-letter)');
   if (state.currentLetterIndex < letters.length) {
     letters[state.currentLetterIndex].classList.add('current');
+  }
+
+  // ── Scroll text-display so current line stays at top of the 3-line window
+  // offsetTop of the current word relative to the text-display container
+  const lineHeight  = parseFloat(getComputedStyle($textDisplay).lineHeight) || ($textDisplay.clientHeight / 3);
+  const wordTop     = wordEl.offsetTop;
+  // Snap to the start of the line that contains this word
+  const targetScroll = Math.floor(wordTop / lineHeight) * lineHeight;
+  // Only scroll forward — never scroll back (feels natural like a typewriter)
+  if (targetScroll > $textDisplay.scrollTop) {
+    $textDisplay.scrollTop = targetScroll;
   }
 }
 
