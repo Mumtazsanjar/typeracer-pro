@@ -326,8 +326,14 @@ function init(newText = true) {
   state.intervalId = null;
 
   if (newText) {
-    state.currentText = getRandomText();
-    state.words       = state.currentText.split(' ');
+    if (state.selectedTime >= 300) {
+      // Long modes: pre-load enough words for the full duration
+      state.words = getLongText();
+      state.currentText = state.words.join(' ');
+    } else {
+      state.currentText = getRandomText();
+      state.words       = state.currentText.split(' ');
+    }
   }
 
   state.currentWordIndex   = 0;
@@ -367,39 +373,19 @@ function getRandomText() {
   return text;
 }
 
-// ── Extend text for long modes (5m / 10m) — append more words seamlessly
-function extendText() {
-  const newText  = getRandomText();
-  const newWords = newText.split(' ');
-  const startIdx = state.words.length;
-
-  // Append to logical words array
-  state.words = state.words.concat(newWords);
-
-  // Append new word elements to the display
-  newWords.forEach((word, i) => {
-    const wi = startIdx + i;
-    const wordEl = document.createElement('span');
-    wordEl.classList.add('word');
-    wordEl.dataset.index = wi;
-
-    [...word].forEach((char, li) => {
-      const el = document.createElement('span');
-      el.classList.add('letter');
-      el.textContent = char;
-      if (wi === state.currentWordIndex && li === 0) el.classList.add('current');
-      wordEl.appendChild(el);
-    });
-
-    $textDisplay.appendChild(wordEl);
-
-    if (wi < state.words.length - 1) {
-      const sp = document.createElement('span');
-      sp.classList.add('letter', 'space-letter');
-      sp.textContent = ' ';
-      wordEl.appendChild(sp);
-    }
-  });
+// ── Build a long combined text for 5m / 10m modes
+// Target ~300 words per minute buffer (conservative for any speed)
+function getLongText() {
+  // Words needed: assume max ~120 WPM to guarantee enough text
+  const wordsNeeded = Math.ceil((state.selectedTime / 60) * 120);
+  let combined = [];
+  // Reset used list so we have maximum variety
+  state.usedTexts[state.difficulty] = [];
+  while (combined.length < wordsNeeded) {
+    const passage = getRandomText();
+    combined = combined.concat(passage.split(' '));
+  }
+  return combined;
 }
 
 // ── Render words/letters into display div
@@ -553,13 +539,7 @@ $input.addEventListener('input', () => {
     updateLiveStats();
 
     if (state.currentWordIndex >= state.words.length) {
-      // Long modes (5m / 10m): append more text instead of ending early
-      if (state.selectedTime >= 300 && state.isRunning) {
-        extendText();
-        updateCursor();
-      } else {
-        endTest();
-      }
+      endTest();
       return;
     }
     updateCursor();
