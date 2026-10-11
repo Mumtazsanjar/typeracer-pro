@@ -645,61 +645,31 @@
           </div>
         </div>
 
-        <!-- ── Hands overlay: sits ON TOP of the keyboard ── -->
-        <svg class="vkb-hands-svg" id="vkb-hands-svg"
-             viewBox="0 0 740 155"
-             xmlns="http://www.w3.org/2000/svg"
-             aria-hidden="true">
+        <!-- ── Hands: normal block BELOW keyboard, fingers pointing UP ── -->
+        <div class="vkb-hands-wrap" aria-hidden="true">
+          <svg class="vkb-hands-svg" id="vkb-hands-svg"
+               viewBox="0 0 740 130"
+               xmlns="http://www.w3.org/2000/svg">
 
-          <!-- ══ LEFT HAND — fingers rest over A S D F keys ══ -->
-          <!-- Palm base -->
-          <ellipse class="hand-palm" cx="168" cy="148" rx="80" ry="14"/>
-          <!-- Pinky → A key area -->
-          <g id="lf-pinky" class="hand-finger">
-            <rect class="finger-shape" x="86"  y="42" width="22" height="106" rx="11"/>
-          </g>
-          <!-- Ring → S key area -->
-          <g id="lf-ring" class="hand-finger">
-            <rect class="finger-shape" x="118" y="22" width="22" height="126" rx="11"/>
-          </g>
-          <!-- Middle → D key area -->
-          <g id="lf-middle" class="hand-finger">
-            <rect class="finger-shape" x="150" y="12" width="22" height="136" rx="11"/>
-          </g>
-          <!-- Index → F key area -->
-          <g id="lf-index" class="hand-finger">
-            <rect class="finger-shape" x="182" y="22" width="22" height="126" rx="11"/>
-          </g>
-          <!-- Thumb → Space (left side) -->
-          <g id="lf-thumb" class="hand-finger">
-            <rect class="finger-shape" x="218" y="132" width="48" height="20" rx="10"/>
-          </g>
+            <!-- LEFT HAND — over A S D F home row -->
+            <ellipse class="hand-palm" cx="165" cy="118" rx="82" ry="16"/>
+            <g id="lf-pinky" class="hand-finger"><rect class="finger-shape" x="82"  y="0" width="22" height="118" rx="11"/></g>
+            <g id="lf-ring"  class="hand-finger"><rect class="finger-shape" x="114" y="0" width="22" height="110" rx="11"/></g>
+            <g id="lf-middle" class="hand-finger"><rect class="finger-shape" x="146" y="0" width="22" height="102" rx="11"/></g>
+            <g id="lf-index" class="hand-finger"><rect class="finger-shape" x="178" y="0" width="22" height="110" rx="11"/></g>
+            <g id="lf-thumb" class="hand-finger"><rect class="finger-shape" x="214" y="106" width="44" height="18" rx="9"/></g>
 
-          <!-- ══ RIGHT HAND — fingers rest over J K L ; keys ══ -->
-          <!-- Palm base -->
-          <ellipse class="hand-palm" cx="572" cy="148" rx="80" ry="14"/>
-          <!-- Index → J key area -->
-          <g id="rf-index" class="hand-finger">
-            <rect class="finger-shape" x="536" y="22" width="22" height="126" rx="11"/>
-          </g>
-          <!-- Middle → K key area -->
-          <g id="rf-middle" class="hand-finger">
-            <rect class="finger-shape" x="568" y="12" width="22" height="136" rx="11"/>
-          </g>
-          <!-- Ring → L key area -->
-          <g id="rf-ring" class="hand-finger">
-            <rect class="finger-shape" x="600" y="22" width="22" height="126" rx="11"/>
-          </g>
-          <!-- Pinky → ; key area -->
-          <g id="rf-pinky" class="hand-finger">
-            <rect class="finger-shape" x="632" y="42" width="22" height="106" rx="11"/>
-          </g>
-          <!-- Thumb → Space (right side) -->
-          <g id="rf-thumb" class="hand-finger">
-            <rect class="finger-shape" x="474" y="132" width="48" height="20" rx="10"/>
-          </g>
+            <!-- RIGHT HAND — over J K L ; home row -->
+            <ellipse class="hand-palm" cx="575" cy="118" rx="82" ry="16"/>
+            <g id="rf-index"  class="hand-finger"><rect class="finger-shape" x="538" y="0" width="22" height="110" rx="11"/></g>
+            <g id="rf-middle" class="hand-finger"><rect class="finger-shape" x="570" y="0" width="22" height="102" rx="11"/></g>
+            <g id="rf-ring"   class="hand-finger"><rect class="finger-shape" x="602" y="0" width="22" height="110" rx="11"/></g>
+            <g id="rf-pinky"  class="hand-finger"><rect class="finger-shape" x="634" y="0" width="22" height="118" rx="11"/></g>
+            <g id="rf-thumb"  class="hand-finger"><rect class="finger-shape" x="482" y="106" width="44" height="18" rx="9"/></g>
 
-        </svg><!-- /.vkb-hands-svg -->
+          </svg>
+        </div>
+
       </div><!-- /.vkb-wrap -->
 
       <!-- History -->

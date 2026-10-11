@@ -1,5 +1,5 @@
-﻿/* ============================================
-   CSS Variables â€“ Dark & Light Mode
+/* ============================================
+   CSS Variables – Dark & Light Mode
    ============================================ */
 :root {
   --bg: #0f0f13;
@@ -176,7 +176,7 @@ a { cursor: pointer; text-decoration: none; color: inherit; }
 .page.active { display: block; }
 
 /* ============================================
-   HOME PAGE â€“ Hero
+   HOME PAGE – Hero
    ============================================ */
 .hero {
   max-width: 1100px; margin: 0 auto;
@@ -341,7 +341,7 @@ a { cursor: pointer; text-decoration: none; color: inherit; }
   margin-bottom: 0.9rem;
 }
 
-/* â”€â”€ Difficulty Row â”€â”€ */
+/* ── Difficulty Row ── */
 .difficulty-row {
   display: flex; align-items: center; gap: 0.85rem;
   flex-wrap: wrap;
@@ -446,7 +446,7 @@ a { cursor: pointer; text-decoration: none; color: inherit; }
 .text-display {
   font-family: 'Fira Code', 'Consolas', 'Courier New', monospace; font-size:1.15rem; line-height:2.1;
   color:var(--text-muted); margin-bottom:1.5rem; user-select:none;
-  /* Fixed 3-line window — text scrolls behind this mask */
+  /* Fixed 3-line window � text scrolls behind this mask */
   height: calc(1.15rem * 2.1 * 3);   /* exactly 3 lines */
   overflow: hidden;
   position: relative;
@@ -783,7 +783,7 @@ a { cursor: pointer; text-decoration: none; color: inherit; }
 
 .tips-list { list-style:none; display:flex; flex-direction:column; gap:0.55rem; }
 .tips-list li { font-size:0.875rem; color:var(--text-secondary); padding-left:1.2rem; position:relative; }
-.tips-list li::before { content:'â†’'; position:absolute; left:0; color:var(--accent2); }
+.tips-list li::before { content:'→'; position:absolute; left:0; color:var(--accent2); }
 
 .tech-tags { display:flex; flex-wrap:wrap; gap:0.5rem; }
 .tech-tag {
@@ -806,7 +806,7 @@ a { cursor: pointer; text-decoration: none; color: inherit; }
 .privacy-highlight span { font-size:1.1rem; flex-shrink:0; }
 .privacy-list { list-style:none; display:flex; flex-direction:column; gap:0.5rem; margin:0.75rem 0; }
 .privacy-list li { font-size:0.875rem; color:var(--text-secondary); padding-left:1.4rem; position:relative; line-height:1.6; }
-.privacy-list li::before { content:'â€¢'; position:absolute; left:0.3rem; color:var(--accent2); }
+.privacy-list li::before { content:'•'; position:absolute; left:0.3rem; color:var(--accent2); }
 .content-card code {
   background:var(--surface2); border:1px solid var(--border);
   border-radius:4px; padding:1px 6px; font-family:'Fira Code',monospace;
@@ -1046,7 +1046,7 @@ a { cursor: pointer; text-decoration: none; color: inherit; }
 ::selection { background:var(--accent); color:#fff; }
 
 /* ============================================
-   RESPONSIVE â€“ Mobile First
+   RESPONSIVE – Mobile First
    ============================================ */
 @media (max-width: 900px) {
   .hero { grid-template-columns:1fr; text-align:center; padding:4rem 1.5rem 2rem; }
@@ -1147,7 +1147,7 @@ a { cursor: pointer; text-decoration: none; color: inherit; }
 }
 
 /* ============================================
-   Landing Page – Breadcrumb
+   Landing Page � Breadcrumb
    ============================================ */
 .lp-breadcrumb { padding: calc(var(--nav-h) + 0.75rem) 1.5rem 0; }
 .lp-breadcrumb-inner { max-width: 1100px; margin: 0 auto; }
@@ -1159,7 +1159,7 @@ a { cursor: pointer; text-decoration: none; color: inherit; }
 .lp-breadcrumb a:hover { color: var(--accent2); }
 .lp-breadcrumb [aria-current="page"] { color: var(--text-secondary); }
 
-/* Landing Page – Hero wrapper (reuses .hero grid, just removes top padding offset) */
+/* Landing Page � Hero wrapper (reuses .hero grid, just removes top padding offset) */
 .lp-hero {
   max-width: 1100px; margin: 0 auto;
   padding: 2rem 1.5rem 3rem;
@@ -1171,17 +1171,13 @@ a { cursor: pointer; text-decoration: none; color: inherit; }
   .lp-hero .hero-visual { display: none; }
 }
 
-/* ============================================
-   VIRTUAL KEYBOARD — HAND OVERLAY (on top of keyboard)
-   ============================================ */
 
 /* ============================================
-   VIRTUAL KEYBOARD — HAND OVERLAY
+   VIRTUAL KEYBOARD � HAND SECTION
    ============================================ */
 
-/* vkb container becomes the positioning parent */
+/* .vkb � normal, no position:relative */
 .vkb {
-  position: relative;
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
@@ -1192,54 +1188,51 @@ a { cursor: pointer; text-decoration: none; color: inherit; }
   box-shadow: var(--shadow);
 }
 
-/* SVG overlay — absolute, covers the keyboard rows only */
-.vkb-hands-svg {
-  position: absolute;
-  top: 0; left: 0;
+/* Hands container � normal block below keyboard */
+.vkb-hands-wrap {
   width: 100%;
-  height: 100%;
+  padding: 0 2px;
+  margin-top: 4px;
   pointer-events: none;
   user-select: none;
-  overflow: hidden;
 }
 
-/* Palm */
+/* SVG fills width, fixed height, fingers point UP toward keyboard */
+.vkb-hands-svg {
+  display: block;
+  width: 100%;
+  height: 100px;
+}
+
 .hand-palm {
   fill: var(--surface2);
   stroke: var(--border);
-  stroke-width: 1;
-  opacity: 0.9;
-}
-
-/* Finger — semi-transparent by default so keys show through */
-.finger-shape {
-  fill: rgba(180,190,220,0.30);
-  stroke: rgba(130,140,180,0.55);
   stroke-width: 1.5;
-  transition: fill 0.12s ease, stroke 0.12s ease,
-              filter 0.12s ease, transform 0.12s ease;
 }
 
-/* Home-row index fingers (F / J) — always lightly accented */
-#lf-index .finger-shape { fill: rgba(124,106,245,0.22); stroke: rgba(124,106,245,0.55); }
-#rf-index .finger-shape { fill: rgba(124,106,245,0.22); stroke: rgba(124,106,245,0.55); }
+.finger-shape {
+  fill: var(--surface2);
+  stroke: var(--border);
+  stroke-width: 1.5;
+  transition: fill 0.12s, stroke 0.12s, filter 0.12s, transform 0.12s;
+}
 
-/* ACTIVE — finger presses down + purple glow */
+#lf-index .finger-shape { fill: rgba(124,106,245,0.18); stroke: rgba(124,106,245,0.6); }
+#rf-index .finger-shape { fill: rgba(124,106,245,0.18); stroke: rgba(124,106,245,0.6); }
+
 .hand-finger.finger-active .finger-shape {
-  fill: rgba(124,106,245,0.72);
+  fill: var(--accent);
   stroke: var(--accent2);
   stroke-width: 2;
-  filter: drop-shadow(0 0 6px rgba(124,106,245,0.6));
-  transform: translateY(5px);
+  filter: drop-shadow(0 0 6px rgba(124,106,245,0.55));
+  transform: translateY(-6px);
 }
 
-/* Light mode */
-[data-theme="light"] .hand-palm     { fill: #dde3ef; stroke: #b8c2d8; }
-[data-theme="light"] .finger-shape  { fill: rgba(109,86,240,0.12); stroke: rgba(109,86,240,0.35); }
+[data-theme="light"] .hand-palm    { fill: #dde3ef; stroke: #b8c2d8; }
+[data-theme="light"] .finger-shape { fill: #dde3ef; stroke: #b8c2d8; }
 [data-theme="light"] #lf-index .finger-shape,
 [data-theme="light"] #rf-index .finger-shape {
-  fill: rgba(109,86,240,0.20); stroke: rgba(109,86,240,0.55);
+  fill: rgba(109,86,240,0.15); stroke: rgba(109,86,240,0.50);
 }
 
-/* Hide at 400px */
-@media (max-width: 400px) { .vkb-hands-svg { display: none; } }
+@media (max-width: 400px) { .vkb-hands-wrap { display: none; } }
